@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wishlist</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/student-portal-shell.css">
+</head>
+<body class="student-portal-page" data-page="wishlist">
+  <div class="portal-shell">
+    <header class="portal-header">
+      <div class="portal-header-left">
+        <div class="portal-logo">CC</div>
+        <div class="portal-title">Student Portal</div>
+      </div>
+      <div class="portal-header-right">
+        <div class="portal-user">Signed in as <strong data-student-name>Student</strong></div>
+        <button class="btn btn-outline btn-sm" type="button" data-action="logout">Logout</button>
+      </div>
+    </header>
+
+    <div class="portal-main">
+      <aside class="portal-sidebar">
+        <nav class="portal-nav">
+          <a href="/student/dashboard.html" data-nav="dashboard">Dashboard</a>
+          <a href="/student/applications.html" data-nav="applications">Applications</a>
+          <a href="/student/opportunities.html" data-nav="opportunities">Opportunities</a>
+          <a href="/student/extra-courses.html" data-nav="extra-courses">Extra Courses</a>
+          <a href="/student/wishlist.html" data-nav="wishlist">Wishlist</a>
+          <a href="/student/attendance.html" data-nav="attendance">Attendance</a>
+          <a href="/student/notifications.html" data-nav="notifications">Notifications</a>
+          <a href="/student/queries.html" data-nav="queries">Queries</a>
+          <a href="/student/profile.html" data-nav="profile">Profile</a>
+          <a href="/student/ai-assistant.html" data-nav="ai-assistant">AI Assistant</a>
+          <button type="button" data-action="logout">Logout</button>
+        </nav>
+      </aside>
+
+      <main class="portal-content">
+        <div class="page-topbar">
+          <h1 class="page-title">Wishlist</h1>
+          <p class="page-subtitle">Your saved course list for later applications.</p>
+        </div>
+
+        <section class="content-card">
+          <div class="toolbar">
+            <button class="btn btn-outline btn-sm" type="button" id="refreshWishlistBtn">Refresh</button>
+          </div>
+
+          <div class="table-wrap" id="wishlistTableWrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Course Title</th>
+                  <th>Company</th>
+                  <th>Department</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="wishlistTableBody"></tbody>
+            </table>
+          </div>
+
+          <div id="wishlistEmptyState" class="hidden">
+            <p>No courses in wishlist.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/student-portal-common.js"></script>
+  <script src="/js/student-wishlist-page.js"></script>
+</body>
+</html>
+

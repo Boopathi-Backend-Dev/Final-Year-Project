@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/professional-enhancements.css">
+  <link rel="stylesheet" href="/css/tailwind-enhancements.css">
+  <link rel="stylesheet" href="/css/color-overrides.css">
+  <link rel="stylesheet" href="/css/enhanced-colors.css">
+  <link rel="stylesheet" href="/css/pink-light-colors.css">
+  <title>College Portal - Login</title>
+</head>
+<body>
+  <div class="navbar animate-fade-down">
+    <div class="navbar-brand">
+      <div class="navbar-logo animate-heartbeat">🎓</div>
+      <div>
+        <h1>College Job & Course Portal</h1>
+        <div class="navbar-subtitle">Your Gateway to Success</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="page-header text-center animate-fade-in">
+      <h2>✨ Welcome Back</h2>
+      <p>Login to access your personalized dashboard and opportunities</p>
+    </div>
+
+    <div class="grid grid-2">
+      <!-- Login Card -->
+      <div class="card animate-fade-in stagger-1">
+        <div class="card-header">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <div class="card-header-icon animate-glow">🔐</div>
+            <h3>Sign In</h3>
+          </div>
+        </div>
+        <div class="card-body" style="padding: 2rem;">
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="email">📧 Email Address</label>
+              <input type="email" id="email" name="email" placeholder="student@college.edu" required />
+            </div>
+            <div class="form-group">
+              <label for="password">🔑 Password</label>
+              <input type="password" id="password" name="password" placeholder="Enter your password" required />
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              🚀 Login to Dashboard
+            </button>
+          </form>
+          <div class="mt-2">
+            <div class="text-center mb-2">
+              <small style="color: var(--slate-500);">Or continue with</small>
+            </div>
+            <a href="/api/auth/google" class="btn btn-info" style="width: 100%;">
+              🔵 Sign in with Google
+            </a>
+          </div>
+          <div class="mt-2 text-center">
+            <small style="color: var(--slate-500);">Don't have an account? <strong>Register below →</strong></small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Register Card -->
+      <div class="card animate-fade-in stagger-2">
+        <div class="card-header">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <div class="card-header-icon" style="background: var(--gradient-forest);">📝</div>
+            <h3>Create Account</h3>
+          </div>
+        </div>
+        <div class="card-body" style="padding: 2rem;">
+          <form id="registerForm">
+            <div class="form-group">
+              <label for="regName">👤 Full Name</label>
+              <input type="text" id="regName" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="regEmail">📧 Email Address</label>
+              <input type="email" id="regEmail" name="email" placeholder="student@college.edu" required />
+            </div>
+            <div class="form-group">
+              <label for="regPassword">🔑 Password</label>
+              <input type="password" id="regPassword" name="password" placeholder="Minimum 6 characters" required minlength="6" />
+            </div>
+            <div class="form-group">
+              <label for="regRole">🎭 Select Your Role</label>
+              <select id="regRole" name="role" required>
+                <option value="">Choose your role...</option>
+                <option value="student">👨‍🎓 Student</option>
+                <option value="staff">👨‍💼 College Staff</option>
+                <option value="company">🏢 Company / Coaching Centre</option>
+              </select>
+            </div>
+            <div class="form-group" id="companyNameGroup" style="display: none;">
+              <label for="companyName">🏢 Company / Centre Name</label>
+              <input type="text" id="companyName" name="companyName" placeholder="ABC Technologies" />
+            </div>
+            <button type="submit" class="btn btn-secondary" style="width: 100%;">
+              ✨ Create Account
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Access -->
+  
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

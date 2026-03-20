@@ -1,0 +1,1084 @@
+/* ============================================
+   COMPANY DASHBOARD - LIGHT THEME COLORS
+   Dedicated light colors for company dashboard
+   ============================================ */
+
+/* Company Dashboard Light Color Variables */
+:root {
+  /* Company Light Backgrounds */
+  --company-bg-primary: #fafafa;
+  --company-bg-secondary: #f4f4f5;
+  --company-bg-tertiary: #e4e4e7;
+  --company-bg-card: #ffffff;
+  --company-bg-card-hover: #fafafa;
+  --company-bg-header: linear-gradient(135deg, #f4f4f5 0%, #e4e4e7 100%);
+  
+  /* Company Light Text Colors */
+  --company-text-primary: #18181b;
+  --company-text-secondary: #3f3f46;
+  --company-text-muted: #71717a;
+  --company-text-accent: #8b4a1f;
+  --company-text-success: #0f766e;
+  --company-text-warning: #d97706;
+  --company-text-danger: #dc2626;
+  
+  /* Company Light Borders */
+  --company-border-light: rgba(228, 228, 231, 0.8);
+  --company-border-hover: rgba(212, 212, 216, 0.8);
+  
+  /* Company Light Shadows */
+  --company-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --company-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --company-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --company-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Disable animations for performance */
+.company-light *, .company-light *::before, .company-light *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Company Dashboard Body */
+body.company-light-theme {
+  background: var(--company-bg-primary);
+  color: var(--company-text-primary);
+  min-height: 100vh;
+}
+
+/* Company Navbar Light Theme */
+.navbar.company-light {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--company-border-light);
+  box-shadow: var(--company-shadow);
+}
+
+.navbar.company-light h1 {
+  color: var(--company-text-primary);
+  font-weight: 700;
+}
+
+.navbar.company-light .navbar-subtitle {
+  color: var(--company-text-muted);
+}
+
+.navbar.company-light .user-info {
+  color: var(--company-text-secondary);
+  background: var(--company-bg-card);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--company-border-light);
+}
+
+/* Company Container */
+.container.company-light {
+  background: transparent;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Company Stats Grid */
+.stats-grid.company-light {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card.company-light {
+  background: var(--company-bg-card);
+  border: 1px solid var(--company-border-light);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--company-shadow);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card.company-light::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #8b4a1f, #0f766e, #d97706, #dc2626);
+}
+
+.stat-card.company-light:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--company-shadow-lg);
+  border-color: var(--company-border-hover);
+}
+
+.stat-card.company-light .stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.stat-card.company-light h4 {
+  color: var(--company-text-muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card.company-light .stat-value {
+  color: var(--company-text-primary);
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Company Cards */
+.card.company-light {
+  background: var(--company-bg-card);
+  border: 1px solid var(--company-border-light);
+  border-radius: 16px;
+  box-shadow: var(--company-shadow);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.card.company-light .card-header {
+  background: var(--company-bg-header);
+  border-bottom: 1px solid var(--company-border-light);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card.company-light .card-header h3 {
+  color: var(--company-text-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.card.company-light .card-header-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #8b4a1f, #6b3f2b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.card.company-light .card-body {
+  padding: 2rem;
+  background: var(--company-bg-card);
+}
+
+/* Company Profile Card */
+.profile-card.company-light {
+  background: var(--company-bg-card);
+  border: 1px solid var(--company-border-light);
+  border-radius: 16px;
+  box-shadow: var(--company-shadow);
+  overflow: hidden;
+}
+
+.profile-card.company-light .profile-header {
+  background: linear-gradient(135deg, #8b4a1f 0%, #6b3f2b 100%);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.company-logo-container.company-light {
+  width: 100px;
+  height: 100px;
+  border-radius: 16px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  margin: 0 auto 1rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-logo-placeholder.company-light {
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.profile-card.company-light .profile-info h4 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.profile-card.company-light .profile-details {
+  padding: 2rem;
+  background: var(--company-bg-card);
+}
+
+.detail-grid.company-light {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.detail-item.company-light {
+  background: var(--company-bg-secondary);
+  border: 1px solid var(--company-border-light);
+  border-left: 3px solid var(--company-text-accent);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.detail-item.company-light:hover {
+  background: var(--company-bg-tertiary);
+  border-color: var(--company-border-hover);
+  transform: translateY(-1px);
+}
+
+.detail-item.company-light label {
+  color: var(--company-text-muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.detail-item.company-light span {
+  color: var(--company-text-primary);
+  font-weight: 600;
+}
+
+/* Company Opportunity Search */
+.company-opportunity-filters.company-light {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.company-opportunity-filters.company-light .form-group {
+  margin-bottom: 0;
+}
+
+.company-opportunity-filters.company-light .search-input-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.company-opportunity-filters.company-light .search-input-group input {
+  background: var(--company-bg-card);
+  border: 1px solid var(--company-border-light);
+  border-radius: 8px;
+  padding: 0.75rem;
+  color: var(--company-text-primary);
+  width: 100%;
+}
+
+.company-opportunity-filters.company-light .search-input-group input:focus {
+  border-color: var(--company-text-accent);
+  box-shadow: 0 0 0 3px rgba(139, 74, 31, 0.12);
+  outline: none;
+}
+
+/* Company Opportunity Cards */
+.opportunity-card.company-light {
+  background: var(--company-bg-card);
+  border: 1px solid var(--company-border-light);
+  border-radius: 12px;
+  box-shadow: var(--company-shadow);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.opportunity-card.company-light::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #8b4a1f, #0f766e);
+}
+
+.opportunity-card.company-light:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--company-shadow-lg);
+  border-color: var(--company-border-hover);
+}
+
+.opportunity-card.company-light h4 {
+  color: var(--company-text-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.opportunity-card.company-light .description {
+  color: var(--company-text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.opportunity-card.company-light .meta-item {
+  color: var(--company-text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  background: var(--company-bg-secondary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+/* Company Applicant Cards */
+.applicant-card.company-light {
+  background: var(--company-bg-card);
+  border: 1px solid var(--company-border-light);
+  border-radius: 12px;
+  box-shadow: var(--company-shadow-sm);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.applicant-card.company-light:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--company-shadow);
+  border-color: var(--company-border-hover);
+}
+
+.applicant-card.company-light .applicant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.applicant-card.company-light .applicant-info h5 {
+  color: var(--company-text-primary);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.applicant-card.company-light .applicant-meta {
+  color: var(--company-text-muted);
+  font-size: 0.875rem;
+}
+
+.applicant-card.company-light .applicant-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Company Forms */
+.form-group.company-light {
+  margin-bottom: 1.5rem;
+}
+
+.form-group.company-light label {
+  color: var(--company-text-secondary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form-group.company-light input,
+.form-group.company-light select,
+.form-group.company-light textarea {
+  background: var(--company-bg-card);
+  border: 1px solid var(--company-border-light);
+  border-radius: 8px;
+  padding: 0.75rem;
+  color: var(--company-text-primary);
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.form-group.company-light input:focus,
+.form-group.company-light select:focus,
+.form-group.company-light textarea:focus {
+  border-color: var(--company-text-accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  background: white;
+  outline: none;
+}
+
+.form-group.company-light input::placeholder,
+.form-group.company-light textarea::placeholder {
+  color: var(--company-text-muted);
+}
+
+.form-group.company-light small {
+  color: var(--company-text-muted);
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Company Buttons */
+.btn.company-light {
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  padding: 0.75rem 1.5rem;
+}
+
+.btn-primary.company-light {
+  background: linear-gradient(135deg, #8b4a1f 0%, #7f3f1d 100%);
+  color: white;
+  box-shadow: var(--company-shadow-sm);
+}
+
+.btn-primary.company-light:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--company-shadow);
+}
+
+.btn-secondary.company-light {
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+  color: white;
+}
+
+.btn-success.company-light {
+  background: linear-gradient(135deg, #0f766e 0%, #15803d 100%);
+  color: white;
+}
+
+.btn-info.company-light {
+  background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+  color: white;
+}
+
+.btn-warning.company-light {
+  background: linear-gradient(135deg, #d97706 0%, #a16207 100%);
+  color: white;
+}
+
+.btn-danger.company-light {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: white;
+}
+
+.btn-outline.company-light {
+  background: var(--company-bg-card);
+  color: var(--company-text-accent);
+  border-color: var(--company-border-light);
+}
+
+.btn-outline.company-light:hover {
+  background: var(--company-bg-secondary);
+  border-color: var(--company-border-hover);
+}
+
+/* Company Badges */
+.badge.company-light {
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid transparent;
+}
+
+.badge-success.company-light {
+  background: rgba(22, 163, 74, 0.1);
+  color: var(--company-text-success);
+  border-color: rgba(22, 163, 74, 0.3);
+}
+
+.badge-warning.company-light {
+  background: rgba(202, 138, 4, 0.1);
+  color: var(--company-text-warning);
+  border-color: rgba(202, 138, 4, 0.3);
+}
+
+.badge-danger.company-light {
+  background: rgba(220, 38, 38, 0.1);
+  color: var(--company-text-danger);
+  border-color: rgba(220, 38, 38, 0.3);
+}
+
+.badge-primary.company-light {
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--company-text-accent);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+/* Company Empty States */
+.empty-state.company-light {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--company-text-muted);
+}
+
+.empty-state.company-light .empty-state-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state.company-light h3 {
+  color: var(--company-text-secondary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state.company-light p {
+  color: var(--company-text-muted);
+  font-size: 0.875rem;
+}
+
+/* Company Modals */
+.modal.company-light {
+  background: rgba(24, 24, 27, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.modal.company-light .modal-content {
+  background: var(--company-bg-card);
+  border: 1px solid var(--company-border-light);
+  border-radius: 16px;
+  box-shadow: var(--company-shadow-xl);
+  color: var(--company-text-primary);
+}
+
+.modal.company-light .modal-header {
+  background: var(--company-bg-header);
+  border-bottom: 1px solid var(--company-border-light);
+  padding: 1.5rem 2rem;
+  border-radius: 16px 16px 0 0;
+}
+
+.modal.company-light .modal-header h3 {
+  color: var(--company-text-primary);
+  margin: 0;
+  font-weight: 700;
+}
+
+.modal.company-light .modal-body {
+  padding: 2rem;
+  background: var(--company-bg-card);
+}
+
+/* Company Tables */
+.table-container.company-light {
+  background: var(--company-bg-card);
+  border: 1px solid var(--company-border-light);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--company-shadow-sm);
+}
+
+.table-container.company-light table {
+  width: 100%;
+  background: var(--company-bg-card);
+}
+
+.table-container.company-light thead {
+  background: var(--company-bg-header);
+}
+
+.table-container.company-light th {
+  color: var(--company-text-primary);
+  font-weight: 600;
+  padding: 1rem;
+  border-bottom: 1px solid var(--company-border-light);
+}
+
+.table-container.company-light td {
+  color: var(--company-text-secondary);
+  padding: 1rem;
+  border-bottom: 1px solid var(--company-border-light);
+}
+
+.table-container.company-light tbody tr:hover {
+  background: var(--company-bg-secondary);
+}
+
+/* Company Grid Layouts */
+.grid.company-light {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid-2.company-light {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3.company-light {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Company Responsive Design */
+@media (max-width: 768px) {
+  .container.company-light {
+    padding: 1rem;
+  }
+  
+  .stats-grid.company-light {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .detail-grid.company-light {
+    grid-template-columns: 1fr;
+  }
+  
+  .grid-2.company-light,
+  .grid-3.company-light {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Company Animations */
+.animate-fade-in.company-light {
+  animation: companyFadeIn 0.6s ease-out;
+}
+
+.animate-bounce-in.company-light {
+  animation: companyBounceIn 0.8s ease-out;
+}
+
+.stagger-1.company-light { animation-delay: 0.1s; }
+.stagger-2.company-light { animation-delay: 0.2s; }
+.stagger-3.company-light { animation-delay: 0.3s; }
+.stagger-4.company-light { animation-delay: 0.4s; }
+
+@keyframes companyFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes companyBounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(20px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-5px);
+  }
+  70% {
+    transform: scale(0.95) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Company Scrollbar */
+.company-light ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.company-light ::-webkit-scrollbar-track {
+  background: var(--company-bg-secondary);
+  border-radius: 4px;
+}
+
+.company-light ::-webkit-scrollbar-thumb {
+  background: var(--company-border-hover);
+  border-radius: 4px;
+  border: 1px solid var(--company-bg-secondary);
+}
+
+.company-light ::-webkit-scrollbar-thumb:hover {
+  background: var(--company-text-muted);
+}
+
+/* Company Loading States */
+.company-loading.company-light {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--company-border-light);
+  border-top-color: var(--company-text-accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   ENHANCED COMPANY DASHBOARD LIGHT COLORS
+   Additional styling for better visual appeal
+   ============================================ */
+
+/* Enhanced Company Profile Form */
+.form-group.company-light input:hover,
+.form-group.company-light select:hover,
+.form-group.company-light textarea:hover {
+  border-color: var(--company-border-hover);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Company Job/Internship Forms */
+.job-form.company-light,
+.internship-form.company-light {
+  background: var(--company-bg-card);
+  border: 1px solid var(--company-border-light);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--company-shadow-sm);
+}
+
+/* Enhanced Button Hover Effects */
+.btn.company-light:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--company-shadow);
+}
+
+.btn.company-light:active {
+  transform: translateY(0);
+  box-shadow: var(--company-shadow-sm);
+}
+
+/* Company Opportunity Display Cards */
+.job-card.company-light,
+.course-card.company-light,
+.internship-card.company-light {
+  background: var(--company-bg-card);
+  border: 1px solid var(--company-border-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--company-shadow-sm);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.job-card.company-light::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #8b4a1f, #6b3f2b);
+}
+
+.course-card.company-light::before {
+  background: linear-gradient(90deg, #0f766e, #059669);
+}
+
+.internship-card.company-light::before {
+  background: linear-gradient(90deg, #0891b2, #0e7490);
+}
+
+.job-card.company-light:hover,
+.course-card.company-light:hover,
+.internship-card.company-light:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--company-shadow-lg);
+  border-color: var(--company-border-hover);
+}
+
+.job-card.company-light h4,
+.course-card.company-light h4,
+.internship-card.company-light h4 {
+  color: var(--company-text-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.job-card.company-light .job-meta,
+.course-card.company-light .course-meta,
+.internship-card.company-light .internship-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.job-card.company-light .job-meta span,
+.course-card.company-light .course-meta span,
+.internship-card.company-light .internship-meta span {
+  background: var(--company-bg-secondary);
+  color: var(--company-text-secondary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Company Dashboard Header Enhancement */
+.company-dashboard-header.company-light {
+  background: linear-gradient(135deg, var(--company-bg-card) 0%, var(--company-bg-secondary) 100%);
+  border: 1px solid var(--company-border-light);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--company-shadow);
+  text-align: center;
+}
+
+.company-dashboard-header.company-light h1 {
+  color: var(--company-text-primary);
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.company-dashboard-header.company-light p {
+  color: var(--company-text-muted);
+  font-size: 1.125rem;
+}
+
+/* Enhanced Company Logo Styling */
+.company-logo.company-light {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.company-logo-upload.company-light {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.company-logo-upload.company-light:hover {
+  transform: scale(1.05);
+}
+
+.company-logo-upload.company-light input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* Company Statistics Enhancement */
+.company-stats.company-light {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.company-stat-item.company-light {
+  background: var(--company-bg-card);
+  border: 1px solid var(--company-border-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--company-shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.company-stat-item.company-light:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--company-shadow);
+}
+
+.company-stat-item.company-light .stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--company-text-accent);
+  margin-bottom: 0.5rem;
+}
+
+.company-stat-item.company-light .stat-label {
+  color: var(--company-text-muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Company Action Buttons */
+.company-actions.company-light {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.company-action-btn.company-light {
+  flex: 1;
+  min-width: 200px;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.company-action-btn.company-light:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--company-shadow-lg);
+}
+
+/* Company Success Messages */
+.company-success.company-light {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-left: 4px solid var(--company-text-success);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  color: var(--company-text-success);
+}
+
+.company-error.company-light {
+  background: rgba(220, 38, 38, 0.1);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  border-left: 4px solid var(--company-text-danger);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  color: var(--company-text-danger);
+}
+
+.company-warning.company-light {
+  background: rgba(202, 138, 4, 0.1);
+  border: 1px solid rgba(202, 138, 4, 0.3);
+  border-left: 4px solid var(--company-text-warning);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  color: var(--company-text-warning);
+}
+
+/* Company Dashboard Navigation */
+.company-nav.company-light {
+  background: var(--company-bg-card);
+  border: 1px solid var(--company-border-light);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--company-shadow-sm);
+}
+
+.company-nav.company-light ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.company-nav.company-light li {
+  flex: 1;
+  min-width: 150px;
+}
+
+.company-nav.company-light a {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--company-text-secondary);
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.company-nav.company-light a:hover,
+.company-nav.company-light a.active {
+  background: var(--company-bg-secondary);
+  color: var(--company-text-accent);
+  border-color: var(--company-border-light);
+}
+
+/* Company Footer */
+.company-footer.company-light {
+  background: var(--company-bg-card);
+  border: 1px solid var(--company-border-light);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 3rem;
+  text-align: center;
+  box-shadow: var(--company-shadow-sm);
+}
+
+.company-footer.company-light p {
+  color: var(--company-text-muted);
+  margin: 0;
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1024px) {
+  .company-actions.company-light {
+    flex-direction: column;
+  }
+  
+  .company-action-btn.company-light {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .company-nav.company-light ul {
+    flex-direction: column;
+  }
+  
+  .company-nav.company-light li {
+    min-width: auto;
+  }
+  
+  .company-stats.company-light {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Company Dashboard Print Styles */
+@media print {
+  .company-light {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .card.company-light,
+  .stat-card.company-light {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+  }
+  
+  .btn.company-light {
+    display: none !important;
+  }
+}

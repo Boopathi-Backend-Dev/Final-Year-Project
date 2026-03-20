@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internship Attendance</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/student-portal-shell.css">
+</head>
+<body class="student-portal-page" data-page="attendance">
+  <div class="portal-shell">
+    <header class="portal-header">
+      <div class="portal-header-left">
+        <div class="portal-logo">CC</div>
+        <div class="portal-title">Student Portal</div>
+      </div>
+      <div class="portal-header-right">
+        <div class="portal-user">Signed in as <strong data-student-name>Student</strong></div>
+        <button class="btn btn-outline btn-sm" type="button" data-action="logout">Logout</button>
+      </div>
+    </header>
+
+    <div class="portal-main">
+      <aside class="portal-sidebar">
+        <nav class="portal-nav">
+          <a href="/student/dashboard.html" data-nav="dashboard">Dashboard</a>
+          <a href="/student/applications.html" data-nav="applications">Applications</a>
+          <a href="/student/opportunities.html" data-nav="opportunities">Opportunities</a>
+          <a href="/student/extra-courses.html" data-nav="extra-courses">Extra Courses</a>
+          <a href="/student/wishlist.html" data-nav="wishlist">Wishlist</a>
+          <a href="/student/attendance.html" data-nav="attendance">Attendance</a>
+          <a href="/student/notifications.html" data-nav="notifications">Notifications</a>
+          <a href="/student/queries.html" data-nav="queries">Queries</a>
+          <a href="/student/profile.html" data-nav="profile">Profile</a>
+          <a href="/student/ai-assistant.html" data-nav="ai-assistant">AI Assistant</a>
+          <button type="button" data-action="logout">Logout</button>
+        </nav>
+      </aside>
+
+      <main class="portal-content">
+        <div class="page-topbar">
+          <h1 class="page-title">Internship Attendance</h1>
+          <p class="page-subtitle">Attendance records and internship progress overview.</p>
+        </div>
+
+        <section class="content-card">
+          <div class="toolbar">
+            <button class="btn btn-outline btn-sm" type="button" id="refreshAttendanceBtn">Refresh</button>
+          </div>
+          <div class="split-grid">
+            <div class="kpi-card">
+              <div class="kpi-label">Total Records</div>
+              <div class="kpi-value" id="attendanceTotal">0</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Present Days</div>
+              <div class="kpi-value" id="attendancePresent">0</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Attendance %</div>
+              <div class="kpi-value" id="attendancePercent">0%</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-card">
+          <h3>Internship Progress</h3>
+          <div id="internshipProgressContainer"></div>
+        </section>
+
+        <section class="content-card">
+          <h3>Attendance Records</h3>
+          <div class="table-wrap" id="attendanceTableWrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Internship</th>
+                  <th>Company</th>
+                  <th>Status</th>
+                  <th>Marked By</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody id="attendanceTableBody"></tbody>
+            </table>
+          </div>
+          <div id="attendanceEmptyState" class="hidden">
+            <p>No attendance records available.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/student-portal-common.js"></script>
+  <script src="/js/student-attendance-page.js"></script>
+</body>
+</html>
+

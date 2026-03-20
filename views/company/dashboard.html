@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/company-portal-shell.css">
+</head>
+<body class="company-portal-page" data-page="dashboard">
+  <div class="portal-shell">
+    <header class="portal-header">
+      <div class="portal-header-left">
+        <div class="portal-logo">CC</div>
+        <div class="portal-title">Company Portal</div>
+      </div>
+      <div class="portal-header-right">
+        <div class="portal-user">Signed in as <strong data-company-name>Company</strong></div>
+        <button class="btn btn-outline btn-sm" type="button" data-action="logout">Logout</button>
+      </div>
+    </header>
+
+    <div class="portal-main">
+      <aside class="portal-sidebar">
+        <nav class="portal-nav">
+          <a href="/company/dashboard.html" data-nav="dashboard">Dashboard</a>
+          <a href="/company/profile.html" data-nav="profile">Profile</a>
+          <a href="/company/jobs.html" data-nav="jobs">Jobs</a>
+          <a href="/company/courses.html" data-nav="courses">Courses</a>
+          <a href="/company/internships.html" data-nav="internships">Internships</a>
+          <a href="/company/applicants.html" data-nav="applicants">Applicants</a>
+          <a href="/company/attendance.html" data-nav="attendance">Attendance</a>
+          <a href="/company/opportunities.html" data-nav="opportunities">Opportunities</a>
+          <a href="/company/queries.html" data-nav="queries">Queries</a>
+          <button type="button" data-action="logout">Logout</button>
+        </nav>
+      </aside>
+
+      <main class="portal-content">
+        <div class="page-topbar">
+          <h1 class="page-title">Dashboard</h1>
+          <p class="page-subtitle">Overview of your posted opportunities and applicants.</p>
+        </div>
+
+        <section class="content-card">
+          <h3>Summary Statistics</h3>
+          <div class="split-grid">
+            <div class="kpi-card">
+              <div class="kpi-label">Posted Jobs</div>
+              <div class="kpi-value" id="totalJobs">0</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Posted Courses</div>
+              <div class="kpi-value" id="totalCourses">0</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Posted Internships</div>
+              <div class="kpi-value" id="totalInternships">0</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Total Applicants</div>
+              <div class="kpi-value" id="totalApplicants">0</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-card">
+          <h3>Quick Actions</h3>
+          <div class="quick-links">
+            <a class="btn btn-primary quick-link" href="/company/jobs.html">Post New Job</a>
+            <a class="btn btn-secondary quick-link" href="/company/courses.html">Post New Course</a>
+            <a class="btn btn-info quick-link" href="/company/internships.html">Post New Internship</a>
+            <a class="btn btn-outline quick-link" href="/company/applicants.html">View Applicants</a>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/company-portal-common.js"></script>
+  <script src="/js/company-dashboard-page.js"></script>
+</body>
+</html>
+

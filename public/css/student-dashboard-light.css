@@ -1,0 +1,788 @@
+/* ============================================
+   STUDENT DASHBOARD - LIGHT THEME COLORS
+   Dedicated light colors for student dashboard
+   ============================================ */
+
+/* Student Dashboard Light Color Variables */
+:root {
+  /* Student Light Backgrounds */
+  --student-bg-primary: #fefefe;
+  --student-bg-secondary: #f8fafc;
+  --student-bg-tertiary: #f1f5f9;
+  --student-bg-card: #ffffff;
+  --student-bg-card-hover: #f8fafc;
+  --student-bg-header: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  
+  /* Student Light Text Colors */
+  --student-text-primary: #1e293b;
+  --student-text-secondary: #475569;
+  --student-text-muted: #64748b;
+  --student-text-accent: #c17a42;
+  --student-text-success: #059669;
+  --student-text-warning: #d97706;
+  
+  /* Student Light Borders */
+  --student-border-light: rgba(226, 232, 240, 0.8);
+  --student-border-hover: rgba(203, 213, 225, 0.8);
+  
+  /* Student Light Shadows */
+  --student-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --student-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --student-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --student-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Disable animations for performance */
+.student-light *, .student-light *::before, .student-light *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Student Dashboard Body */
+body.student-light-theme {
+  background: var(--student-bg-primary);
+  color: var(--student-text-primary);
+  min-height: 100vh;
+}
+
+/* Student Navbar Light Theme */
+.navbar.student-light {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--student-border-light);
+  box-shadow: var(--student-shadow);
+}
+
+.navbar.student-light h1 {
+  color: var(--student-text-primary);
+  font-weight: 700;
+}
+
+.navbar.student-light .navbar-subtitle {
+  color: var(--student-text-muted);
+}
+
+.navbar.student-light .user-info {
+  color: var(--student-text-secondary);
+  background: var(--student-bg-card);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--student-border-light);
+}
+
+/* Student Container */
+.container.student-light {
+  background: transparent;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Student Stats Grid */
+.stats-grid.student-light {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card.student-light {
+  background: var(--student-bg-card);
+  border: 1px solid var(--student-border-light);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--student-shadow);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card.student-light::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #c17a42, #0f766e, #d97706);
+}
+
+.stat-card.student-light:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--student-shadow-lg);
+  border-color: var(--student-border-hover);
+}
+
+.stat-card.student-light .stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.stat-card.student-light h4 {
+  color: var(--student-text-muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card.student-light .stat-value {
+  color: var(--student-text-primary);
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Student Cards */
+.card.student-light {
+  background: var(--student-bg-card);
+  border: 1px solid var(--student-border-light);
+  border-radius: 16px;
+  box-shadow: var(--student-shadow);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.card.student-light .card-header {
+  background: var(--student-bg-header);
+  border-bottom: 1px solid var(--student-border-light);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card.student-light .card-header h3 {
+  color: var(--student-text-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.card.student-light .card-header-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #c17a42, #8b4a1f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.card.student-light .card-body {
+  padding: 2rem;
+  background: var(--student-bg-card);
+}
+
+/* Student Profile Card */
+.profile-card.student-light {
+  background: var(--student-bg-card);
+  border: 1px solid var(--student-border-light);
+  border-radius: 16px;
+  box-shadow: var(--student-shadow);
+  overflow: hidden;
+}
+
+.profile-card.student-light .profile-header {
+  background: linear-gradient(135deg, #c17a42 0%, #8b4a1f 100%);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.profile-card.student-light .profile-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  margin: 0 auto 1rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.profile-card.student-light .profile-info h4 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.profile-card.student-light .profile-details {
+  padding: 2rem;
+  background: var(--student-bg-card);
+}
+
+.detail-grid.student-light {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.detail-item.student-light {
+  background: var(--student-bg-secondary);
+  border: 1px solid var(--student-border-light);
+  border-left: 3px solid var(--student-text-accent);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.detail-item.student-light:hover {
+  background: var(--student-bg-tertiary);
+  border-color: var(--student-border-hover);
+  transform: translateY(-1px);
+}
+
+.detail-item.student-light label {
+  color: var(--student-text-muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.detail-item.student-light span {
+  color: var(--student-text-primary);
+  font-weight: 600;
+}
+
+/* Student Course Cards */
+.course-card.student-light {
+  background: var(--student-bg-card);
+  border: 1px solid var(--student-border-light);
+  border-radius: 12px;
+  box-shadow: var(--student-shadow-sm);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-card.student-light::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0f766e, #c17a42);
+}
+
+.course-card.student-light:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--student-shadow);
+  border-color: var(--student-border-hover);
+}
+
+.course-card.student-light h5 {
+  color: var(--student-text-primary);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.course-card.student-light .course-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.course-card.student-light .course-meta span {
+  color: var(--student-text-secondary);
+  font-size: 0.875rem;
+  background: var(--student-bg-secondary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+}
+
+/* Student Opportunity Cards */
+.opportunity-card.student-light {
+  background: var(--student-bg-card);
+  border: 1px solid var(--student-border-light);
+  border-radius: 12px;
+  box-shadow: var(--student-shadow);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.opportunity-card.student-light:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--student-shadow-lg);
+  border-color: var(--student-border-hover);
+}
+
+.opportunity-card.student-light h4 {
+  color: var(--student-text-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.opportunity-card.student-light .description {
+  color: var(--student-text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.opportunity-card.student-light .meta-item {
+  color: var(--student-text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Student AI Chat Interface */
+.ai-chat-interface.student-light {
+  background: var(--student-bg-card);
+  border: 1px solid var(--student-border-light);
+  border-radius: 16px;
+  box-shadow: var(--student-shadow);
+  overflow: hidden;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-chat-interface.student-light .chat-messages {
+  flex: 1;
+  background: var(--student-bg-secondary);
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.ai-chat-interface.student-light .message-content {
+  background: var(--student-bg-card);
+  border: 1px solid var(--student-border-light);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--student-shadow-sm);
+  color: var(--student-text-primary);
+}
+
+.ai-chat-interface.student-light .user-message .message-content {
+  background: linear-gradient(135deg, #c17a42 0%, #8b4a1f 100%);
+  color: white;
+  margin-left: 2rem;
+}
+
+.ai-chat-interface.student-light .ai-message .message-content {
+  margin-right: 2rem;
+}
+
+.ai-chat-interface.student-light .chat-input-container {
+  background: var(--student-bg-card);
+  border-top: 1px solid var(--student-border-light);
+  padding: 1rem;
+}
+
+.ai-chat-interface.student-light #chatInput {
+  background: var(--student-bg-card);
+  border: 1px solid var(--student-border-light);
+  border-radius: 8px;
+  padding: 0.75rem;
+  color: var(--student-text-primary);
+  width: 100%;
+  resize: vertical;
+}
+
+.ai-chat-interface.student-light #chatInput:focus {
+  border-color: var(--student-text-accent);
+  box-shadow: 0 0 0 3px rgba(193, 122, 66, 0.1);
+  outline: none;
+}
+
+.ai-chat-interface.student-light .quick-question-btn {
+  background: var(--student-bg-card);
+  border: 1px solid var(--student-border-light);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  color: var(--student-text-secondary);
+  font-size: 0.875rem;
+  margin: 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.ai-chat-interface.student-light .quick-question-btn:hover {
+  background: linear-gradient(135deg, #c17a42 0%, #8b4a1f 100%);
+  color: white;
+  border-color: transparent;
+  transform: translateY(-1px);
+}
+
+/* Student Forms */
+.form-group.student-light {
+  margin-bottom: 1.5rem;
+}
+
+.form-group.student-light label {
+  color: var(--student-text-secondary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form-group.student-light input,
+.form-group.student-light select,
+.form-group.student-light textarea {
+  background: var(--student-bg-card);
+  border: 1px solid var(--student-border-light);
+  border-radius: 8px;
+  padding: 0.75rem;
+  color: var(--student-text-primary);
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.form-group.student-light input:focus,
+.form-group.student-light select:focus,
+.form-group.student-light textarea:focus {
+  border-color: var(--student-text-accent);
+  box-shadow: 0 0 0 3px rgba(193, 122, 66, 0.1);
+  background: white;
+  outline: none;
+}
+
+.form-group.student-light input::placeholder,
+.form-group.student-light textarea::placeholder {
+  color: var(--student-text-muted);
+}
+
+/* Student opportunities search */
+.opportunity-filters.student-light {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.opportunity-filters.student-light .form-group {
+  margin-bottom: 0;
+}
+
+.opportunity-filters.student-light .search-input-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.opportunity-filters.student-light .search-input-group input {
+  background: var(--student-bg-card);
+  border: 1px solid var(--student-border-light);
+  border-radius: 8px;
+  padding: 0.75rem;
+  color: var(--student-text-primary);
+  width: 100%;
+}
+
+.opportunity-filters.student-light .search-input-group input:focus {
+  border-color: var(--student-text-accent);
+  box-shadow: 0 0 0 3px rgba(193, 122, 66, 0.1);
+  outline: none;
+}
+
+.saved-searches-panel.student-light {
+  margin: 1rem 0 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--student-border-light);
+  border-radius: 10px;
+  background: var(--student-bg-secondary);
+}
+
+.saved-search-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.saved-searches-list {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.saved-search-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--student-bg-card);
+  border: 1px solid var(--student-border-light);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.85rem;
+}
+
+.saved-search-chip button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--student-text-muted);
+}
+
+.pagination-controls.student-light {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.notifications-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.notification-item {
+  border: 1px solid var(--student-border-light);
+  border-radius: 10px;
+  padding: 0.75rem;
+  background: var(--student-bg-secondary);
+}
+
+.notification-item.unread {
+  border-left: 4px solid #c17a42;
+}
+
+.notification-item h5 {
+  margin: 0 0 0.25rem;
+  color: var(--student-text-primary);
+}
+
+.notification-item p {
+  margin: 0;
+  color: var(--student-text-secondary);
+  font-size: 0.9rem;
+}
+
+.wishlist-table td:last-child {
+  white-space: nowrap;
+}
+
+/* Student Buttons */
+.btn.student-light {
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  padding: 0.75rem 1.5rem;
+}
+
+.btn-primary.student-light {
+  background: linear-gradient(135deg, #c17a42 0%, #8b4a1f 100%);
+  color: white;
+  box-shadow: var(--student-shadow-sm);
+}
+
+.btn-primary.student-light:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--student-shadow);
+}
+
+.btn-success.student-light {
+  background: linear-gradient(135deg, #0f766e 0%, #059669 100%);
+  color: white;
+}
+
+.btn-info.student-light {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  color: white;
+}
+
+.btn-outline.student-light {
+  background: var(--student-bg-card);
+  color: var(--student-text-accent);
+  border-color: var(--student-border-light);
+}
+
+.btn-outline.student-light:hover {
+  background: var(--student-bg-secondary);
+  border-color: var(--student-border-hover);
+}
+
+/* Student Badges */
+.badge.student-light {
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid transparent;
+}
+
+.badge-success.student-light {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--student-text-success);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.badge-warning.student-light {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--student-text-warning);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.badge-primary.student-light {
+  background: rgba(193, 122, 66, 0.1);
+  color: var(--student-text-accent);
+  border-color: rgba(193, 122, 66, 0.3);
+}
+
+/* Student Empty States */
+.empty-state.student-light {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--student-text-muted);
+}
+
+.empty-state.student-light .empty-state-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state.student-light h3 {
+  color: var(--student-text-secondary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state.student-light p {
+  color: var(--student-text-muted);
+  font-size: 0.875rem;
+}
+
+/* Student Modals */
+.modal.student-light {
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.modal.student-light .modal-content {
+  background: var(--student-bg-card);
+  border: 1px solid var(--student-border-light);
+  border-radius: 16px;
+  box-shadow: var(--student-shadow-xl);
+  color: var(--student-text-primary);
+}
+
+.modal.student-light .modal-header {
+  background: var(--student-bg-header);
+  border-bottom: 1px solid var(--student-border-light);
+  padding: 1.5rem 2rem;
+  border-radius: 16px 16px 0 0;
+}
+
+.modal.student-light .modal-header h3 {
+  color: var(--student-text-primary);
+  margin: 0;
+  font-weight: 700;
+}
+
+.modal.student-light .modal-body {
+  padding: 2rem;
+  background: var(--student-bg-card);
+}
+
+/* Student Progress Elements */
+.progress-bar.student-light {
+  background: var(--student-bg-tertiary);
+  border-radius: 10px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.progress-fill.student-light {
+  background: linear-gradient(90deg, #c17a42, #0f766e);
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+/* Student Responsive Design */
+@media (max-width: 768px) {
+  .container.student-light {
+    padding: 1rem;
+  }
+  
+  .stats-grid.student-light {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .detail-grid.student-light {
+    grid-template-columns: 1fr;
+  }
+  
+  .ai-chat-interface.student-light {
+    height: 400px;
+  }
+}
+
+/* Student Animations */
+.animate-fade-in.student-light {
+  animation: studentFadeIn 0.6s ease-out;
+}
+
+.animate-bounce-in.student-light {
+  animation: studentBounceIn 0.8s ease-out;
+}
+
+.stagger-1.student-light { animation-delay: 0.1s; }
+.stagger-2.student-light { animation-delay: 0.2s; }
+.stagger-3.student-light { animation-delay: 0.3s; }
+
+@keyframes studentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes studentBounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(20px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-5px);
+  }
+  70% {
+    transform: scale(0.95) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Student Scrollbar */
+.student-light ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.student-light ::-webkit-scrollbar-track {
+  background: var(--student-bg-secondary);
+  border-radius: 4px;
+}
+
+.student-light ::-webkit-scrollbar-thumb {
+  background: var(--student-border-hover);
+  border-radius: 4px;
+  border: 1px solid var(--student-bg-secondary);
+}
+
+.student-light ::-webkit-scrollbar-thumb:hover {
+  background: var(--student-text-muted);
+}
+

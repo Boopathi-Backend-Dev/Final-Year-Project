@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/professional-enhancements.css">
+  <link rel="stylesheet" href="/css/tailwind-enhancements.css">
+  <link rel="stylesheet" href="/css/color-overrides.css">
+  <link rel="stylesheet" href="/css/enhanced-colors.css">
+  <link rel="stylesheet" href="/css/pink-light-colors.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
+  <link rel="stylesheet" href="/css/company-dashboard-light.css">
+  <link rel="stylesheet" href="/css/no-animations.css">
+  <link rel="stylesheet" href="/css/company-attendance.css">
+  <title>Internship Attendance - College Connect</title>
+</head>
+<body class="light-theme company-light-theme">
+  <div class="navbar company-light">
+    <div class="navbar-brand">
+      <div class="navbar-logo">
+        🏢
+      </div>
+      <div>
+        <h1>Internship Attendance</h1>
+        <div class="navbar-subtitle">Track Intern Attendance Records</div>
+      </div>
+    </div>
+    <div class="navbar-actions">
+      <div class="user-info company-light" id="userInfo">Loading...</div>
+      <button class="btn btn-outline company-light btn-sm" onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <div class="container company-light">
+    <!-- Select Internship -->
+    <div class="card company-light">
+      <div class="card-header">
+        <h3>🎯 Select Internship</h3>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="internshipSelect">Choose an internship to manage attendance:</label>
+          <select id="internshipSelect" class="form-control">
+            <option value="">-- Select an internship --</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Attendance Entry Form -->
+    <div class="card company-light" id="attendanceFormCard" style="display: none;">
+      <div class="card-header">
+        <h3>✍️ Mark Attendance</h3>
+      </div>
+      <div class="card-body">
+        <form id="attendanceForm">
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label for="studentSelect">Student</label>
+              <select id="studentSelect" required>
+                <option value="">-- Select a student --</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="attendanceDate">Date</label>
+              <input type="date" id="attendanceDate" required />
+            </div>
+          </div>
+
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label for="presentToggle">Present</label>
+              <div class="toggle-group">
+                <label class="checkbox-group">
+                  <input type="checkbox" id="presentToggle" />
+                  <span class="checkbox-label">Mark as Present</span>
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="presentedByCompany">Presented By (Company Contact)</label>
+              <input type="text" id="presentedByCompany" placeholder="E.g., HR Manager Name" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="attendanceNotes">Notes</label>
+            <textarea id="attendanceNotes" placeholder="Additional notes..." rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">📅 Mark Attendance</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Daily Attendance Table (All Students) -->
+    <div class="card company-light" id="bulkAttendanceCard" style="display: none;">
+      <div class="card-header">
+        <h3>🗓 Daily Attendance (All Students)</h3>
+      </div>
+      <div class="card-body">
+        <div class="grid grid-2">
+          <div class="form-group">
+            <label for="bulkAttendanceDate">Date</label>
+            <input type="date" id="bulkAttendanceDate" />
+          </div>
+        </div>
+
+        <div id="bulkAttendanceTableContainer" class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Student Name</th>
+                <th>Register Number</th>
+                <th>Present</th>
+              </tr>
+            </thead>
+            <tbody id="bulkAttendanceBody">
+              <!-- Rows will be loaded here -->
+            </tbody>
+          </table>
+        </div>
+
+        <button type="button" class="btn btn-primary" id="saveBulkAttendanceBtn">
+          💾 Save Daily Attendance
+        </button>
+      </div>
+    </div>
+
+    <!-- Attendance Records Table -->
+    <div class="card company-light" id="attendanceTableCard" style="display: none;">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h3>📊 Attendance Records</h3>
+          <button class="btn btn-secondary company-light btn-sm" onclick="loadAttendanceRecords()">🔄 Refresh</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="attendance-filters" style="margin-bottom: 1.5rem;">
+          <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Filter by Status:</label>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="btn btn-outline company-light btn-sm" onclick="filterAttendance('all')">All</button>
+            <button class="btn btn-success company-light btn-sm" onclick="filterAttendance('present')">✅ Present</button>
+            <button class="btn btn-danger company-light btn-sm" onclick="filterAttendance('absent')">❌ Absent</button>
+          </div>
+        </div>
+        <div id="attendanceTableContainer">
+          <div class="empty-state company-light">
+            <div class="empty-state-icon">📋</div>
+            <h3>No attendance records</h3>
+            <p>Select an internship and mark attendance</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Attendance Details Modal -->
+    <div id="attendanceDetailsModal" class="modal company-light" style="display: none;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Attendance Details</h3>
+          <button class="modal-close" onclick="closeAttendanceDetails()">&times;</button>
+        </div>
+        <div class="modal-body" id="attendanceDetailsBody">
+          <!-- Details will be loaded here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/company-attendance.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/professional-enhancements.css">
+  <link rel="stylesheet" href="/css/tailwind-enhancements.css">
+  <link rel="stylesheet" href="/css/color-overrides.css">
+  <link rel="stylesheet" href="/css/enhanced-colors.css">
+  <link rel="stylesheet" href="/css/pink-light-colors.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
+  <link rel="stylesheet" href="/css/no-animations.css">
+  <title>Course Progress - Student</title>
+  <style>
+    .progress-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .course-header {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .progress-ring {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: conic-gradient(var(--primary) 0deg, var(--primary) calc(var(--progress) * 3.6deg), #e5e7eb calc(var(--progress) * 3.6deg));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .progress-ring::before {
+      content: '';
+      width: 90px;
+      height: 90px;
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .progress-value {
+      position: relative;
+      z-index: 1;
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .module-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.3s ease;
+      border-left: 4px solid transparent;
+    }
+
+    .module-card.completed {
+      border-left-color: var(--success);
+    }
+
+    .module-card.in-progress {
+      border-left-color: var(--warning);
+    }
+
+    .module-card.not-started {
+      border-left-color: var(--gray-light);
+    }
+
+    .module-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .module-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .module-progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #e5e7eb;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+
+    .module-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+      transition: width 0.3s ease;
+    }
+
+    .practice-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow-soft);
+      border-top: 3px solid var(--info);
+    }
+
+    .practice-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .submission-form {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .attendance-calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .attendance-day {
+      aspect-ratio: 1;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .attendance-day.present {
+      background: var(--gradient-success);
+      color: white;
+    }
+
+    .attendance-day.absent {
+      background: var(--gradient-warning);
+      color: white;
+    }
+
+    .attendance-day.late {
+      background: #fbbf24;
+      color: white;
+    }
+
+    .attendance-day.empty {
+      background: #f3f4f6;
+      color: #9ca3af;
+    }
+
+    .stats-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .stat-mini {
+      text-align: center;
+      padding: 1rem;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .stat-mini-value {
+      font-size: 1.75rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .stat-mini-label {
+      font-size: 0.875rem;
+      color: var(--gray);
+      margin-top: 0.25rem;
+    }
+
+    .session-log {
+      background: white;
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+      border-left: 3px solid var(--info);
+    }
+
+    .time-tracker {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .time-display {
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 1rem 0;
+    }
+
+    .tab-navigation {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .tab-button {
+      padding: 1rem 2rem;
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--gray);
+      transition: all 0.3s ease;
+    }
+
+    .tab-button.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="light-theme">
+  <div class="navbar light-theme">
+    <div class="navbar-brand">
+      <div class="navbar-logo">📊</div>
+      <div>
+        <h1>Course Progress</h1>
+        <div class="navbar-subtitle">Track Your Learning Journey</div>
+      </div>
+    </div>
+    <div class="navbar-actions">
+      <button class="btn btn-outline light-theme btn-sm" onclick="window.location.href='/student/dashboard.html'">← Back to Dashboard</button>
+      <button class="btn btn-outline light-theme btn-sm" onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <div class="progress-container">
+    <!-- Course Selection -->
+    <div class="card light-theme">
+      <div class="card-header">
+        <h3>📚 Select Course</h3>
+      </div>
+      <div class="card-body">
+        <select id="courseSelect" class="form-control light-theme" onchange="loadCourseProgress()">
+          <option value="">-- Select a Course --</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Course Progress Overview -->
+    <div id="progressOverview" style="display: none;">
+      <div class="course-header">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <h2 id="courseName">Course Name</h2>
+            <p class="text-muted" id="courseDescription">Course description</p>
+          </div>
+          <div class="progress-ring" style="--progress: 0" id="overallProgressRing">
+            <span class="progress-value" id="overallProgressValue">0%</span>
+          </div>
+        </div>
+
+        <div class="stats-mini-grid">
+          <div class="stat-mini">
+            <div class="stat-mini-value" id="modulesCompleted">0/0</div>
+            <div class="stat-mini-label">Modules Completed</div>
+          </div>
+          <div class="stat-mini">
+            <div class="stat-mini-value" id="practicesCompleted">0/0</div>
+            <div class="stat-mini-label">Practices Completed</div>
+          </div>
+          <div class="stat-mini">
+            <div class="stat-mini-value" id="attendancePercent">0%</div>
+            <div class="stat-mini-label">Attendance</div>
+          </div>
+          <div class="stat-mini">
+            <div class="stat-mini-value" id="averageScore">0</div>
+            <div class="stat-mini-label">Average Score</div>
+          </div>
+          <div class="stat-mini">
+            <div class="stat-mini-value" id="totalTimeSpent">0h</div>
+            <div class="stat-mini-label">Time Spent</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="tab-navigation">
+        <button class="tab-button active" onclick="switchTab('modules')">📖 Modules</button>
+        <button class="tab-button" onclick="switchTab('practices')">✍️ Practices</button>
+        <button class="tab-button" onclick="switchTab('attendance')">📅 Attendance</button>
+        <button class="tab-button" onclick="switchTab('sessions')">⏱️ Study Sessions</button>
+      </div>
+
+      <!-- Modules Tab -->
+      <div id="modulesTab" class="tab-content active">
+        <div class="card">
+          <div class="card-header">
+            <h3>📖 Course Modules</h3>
+          </div>
+          <div class="card-body">
+            <div id="modulesList">
+              <div class="empty-state">
+                <div class="empty-state-icon">📚</div>
+                <h3>No modules available</h3>
+                <p>Modules will appear here once added by instructor</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Practices Tab -->
+      <div id="practicesTab" class="tab-content">
+        <div class="card">
+          <div class="card-header">
+            <h3>✍️ Practices & Assignments</h3>
+          </div>
+          <div class="card-body">
+            <div id="practicesList">
+              <div class="empty-state">
+                <div class="empty-state-icon">📝</div>
+                <h3>No practices available</h3>
+                <p>Assignments will appear here once added by instructor</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Attendance Tab -->
+      <div id="attendanceTab" class="tab-content">
+        <div class="card">
+          <div class="card-header">
+            <h3>📅 Attendance Record</h3>
+          </div>
+          <div class="card-body">
+            <div id="attendanceSummary" class="stats-mini-grid">
+              <!-- Attendance summary will be loaded here -->
+            </div>
+            <div id="attendanceCalendar" class="attendance-calendar">
+              <!-- Calendar will be loaded here -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Study Sessions Tab -->
+      <div id="sessionsTab" class="tab-content">
+        <div class="card">
+          <div class="card-header">
+            <h3>⏱️ Study Sessions</h3>
+            <button class="btn btn-primary btn-sm" onclick="showSessionModal()">+ Log Session</button>
+          </div>
+          <div class="card-body">
+            <div class="time-tracker">
+              <h3>Total Study Time</h3>
+              <div class="time-display" id="totalStudyTime">0h 0m</div>
+              <p>Keep up the great work!</p>
+            </div>
+            <div id="sessionsList" style="margin-top: 2rem;">
+              <!-- Sessions will be loaded here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Module Detail Modal -->
+  <div id="moduleModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="moduleModalTitle">Module Details</h3>
+        <button class="btn btn-outline btn-sm" onclick="closeModuleModal()">&times;</button>
+      </div>
+      <div class="modal-body" id="moduleModalBody">
+        <!-- Module details will be loaded here -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="closeModuleModal()">Close</button>
+        <button class="btn btn-success" onclick="markModuleComplete()">✓ Mark Complete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Practice Submission Modal -->
+  <div id="practiceModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="practiceModalTitle">Submit Practice</h3>
+        <button class="btn btn-outline btn-sm" onclick="closePracticeModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="practiceSubmissionForm">
+          <input type="hidden" id="practiceId">
+          <div class="form-group">
+            <label>Submission Text</label>
+            <textarea id="submissionText" rows="6" placeholder="Enter your answer or solution..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Submission URL (Optional)</label>
+            <input type="url" id="submissionUrl" placeholder="https://github.com/your-repo/assignment">
+            <small>Link to GitHub, Google Drive, or other hosting</small>
+          </div>
+          <div class="form-group">
+            <label>Time Spent (minutes)</label>
+            <input type="number" id="timeSpent" min="0" placeholder="30">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="closePracticeModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="submitPractice()">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Study Session Modal -->
+  <div id="sessionModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Log Study Session</h3>
+        <button class="btn btn-outline btn-sm" onclick="closeSessionModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="sessionForm">
+          <div class="form-group">
+            <label>Session Date</label>
+            <input type="date" id="sessionDate" required>
+          </div>
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label>Start Time</label>
+              <input type="time" id="startTime" required>
+            </div>
+            <div class="form-group">
+              <label>End Time</label>
+              <input type="time" id="endTime" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Activity Type</label>
+            <select id="activityType">
+              <option value="video-watching">Video Watching</option>
+              <option value="reading">Reading</option>
+              <option value="practice">Practice Problems</option>
+              <option value="assignment">Working on Assignment</option>
+              <option value="self-study">Self Study</option>
+              <option value="group-study">Group Study</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Notes (Optional)</label>
+            <textarea id="sessionNotes" rows="3" placeholder="What did you learn or work on?"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="closeSessionModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="logSession()">Log Session</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/course-progress.js"></script>
+</body>
+</html>
+

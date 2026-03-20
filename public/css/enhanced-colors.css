@@ -1,0 +1,482 @@
+/* ============================================
+   ENHANCED COLORS - BEAUTIFUL ALTERNATIVES
+   Complete color enhancement with vibrant alternatives
+   ============================================ */
+
+/* Enhanced Color Variables */
+:root {
+  /* Beautiful Text Colors */
+  --text-primary: #3b2f2a;    /* Espresso */
+  --text-secondary: #5b4a3f;  /* Warm slate */
+  --text-muted: #7a665a;      /* Muted latte */
+  --text-light: #a8927d;      /* Light mocha */
+  
+  /* Vibrant Accent Colors */
+  --accent-electric: #c17a42;  /* Caramel */
+  --accent-violet: #8b4a1f;    /* Espresso */
+  --accent-emerald: #0f766e;   /* Teal */
+  --accent-coral: #d97706;     /* Amber */
+  --accent-rose: #c2410c;      /* Clay */
+  --accent-teal: #2a9d8f;      /* Sea green */
+  
+  /* Beautiful Shadows */
+  --shadow-colored: 0 4px 6px -1px rgba(75, 54, 38, 0.14);
+  --shadow-colored-lg: 0 10px 15px -3px rgba(75, 54, 38, 0.18);
+  --shadow-emerald: 0 4px 6px -1px rgba(15, 118, 110, 0.2);
+  --shadow-violet: 0 4px 6px -1px rgba(139, 74, 31, 0.2);
+  --shadow-coral: 0 4px 6px -1px rgba(217, 119, 6, 0.2);
+}
+
+/* Text Color Enhancements */
+body {
+  color: var(--text-secondary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+small {
+  color: var(--text-muted);
+}
+
+/* Enhanced Link Colors */
+a {
+  color: var(--accent-electric);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-violet);
+}
+
+/* Beautiful Button Enhancements */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-electric) 0%, var(--accent-violet) 100%);
+  box-shadow: var(--shadow-colored);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--accent-emerald) 0%, var(--accent-teal) 100%);
+  box-shadow: var(--shadow-emerald);
+}
+
+.btn-info {
+  background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-electric) 100%);
+  box-shadow: var(--shadow-colored);
+}
+
+.btn-warning {
+  background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-rose) 100%);
+  box-shadow: var(--shadow-coral);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, var(--accent-emerald) 0%, #059669 100%);
+  box-shadow: var(--shadow-emerald);
+}
+
+/* Enhanced Form Colors */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--accent-electric);
+  box-shadow: 0 0 0 3px rgba(193, 122, 66, 0.1);
+}
+
+/* Beautiful Badge Colors */
+.badge-primary {
+  background: linear-gradient(135deg, rgba(193, 122, 66, 0.1) 0%, rgba(139, 74, 31, 0.1) 100%);
+  color: var(--accent-violet);
+}
+
+.badge-success {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(20, 184, 166, 0.1) 100%);
+  color: var(--accent-emerald);
+}
+
+.badge-warning {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+  color: var(--accent-coral);
+}
+
+.badge-info {
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.1) 0%, rgba(193, 122, 66, 0.1) 100%);
+  color: var(--accent-teal);
+}
+
+/* Enhanced Card Colors */
+.card {
+  border: 1px solid rgba(193, 122, 66, 0.1);
+  box-shadow: var(--shadow-colored);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-colored-lg);
+  border-color: rgba(193, 122, 66, 0.2);
+}
+
+/* Beautiful Stat Card Colors */
+.stat-card {
+  border: 1px solid rgba(193, 122, 66, 0.1);
+}
+
+.stat-card.success {
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.stat-card.info {
+  border-color: rgba(20, 184, 166, 0.2);
+}
+
+.stat-card.warning {
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+/* Enhanced Table Colors */
+tbody tr:hover {
+  background: linear-gradient(135deg, rgba(193, 122, 66, 0.03) 0%, rgba(139, 74, 31, 0.03) 100%);
+}
+
+/* Beautiful Progress Colors */
+.progress-bar {
+  background: rgba(193, 122, 66, 0.1);
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, var(--accent-electric) 0%, var(--accent-violet) 100%);
+}
+
+/* Enhanced Modal Colors */
+.modal {
+  background: rgba(43, 34, 29, 0.7);
+}
+
+.modal-content {
+  border: 1px solid rgba(193, 122, 66, 0.1);
+  box-shadow: var(--shadow-colored-lg);
+}
+
+/* Beautiful Toast Colors */
+.toast {
+  border-left: 4px solid var(--accent-electric);
+  box-shadow: var(--shadow-colored);
+}
+
+.toast.success {
+  border-left-color: var(--accent-emerald);
+}
+
+.toast.warning {
+  border-left-color: var(--accent-coral);
+}
+
+.toast.error {
+  border-left-color: var(--accent-rose);
+}
+
+/* Enhanced Opportunity Card Colors */
+.opportunity-card {
+  border: 1px solid rgba(193, 122, 66, 0.1);
+}
+
+.opportunity-card::before {
+  background: linear-gradient(90deg, var(--accent-electric) 0%, var(--accent-violet) 100%);
+}
+
+/* Beautiful Student Card Colors */
+.student-card {
+  border: 1px solid rgba(193, 122, 66, 0.1);
+}
+
+.student-card .card-header {
+  background: linear-gradient(135deg, var(--accent-electric) 0%, var(--accent-violet) 100%);
+}
+
+/* Enhanced Detail Item Colors */
+.detail-item {
+  background: linear-gradient(135deg, rgba(193, 122, 66, 0.03) 0%, rgba(139, 74, 31, 0.03) 100%);
+  border-left-color: var(--accent-electric);
+}
+
+.detail-item:hover {
+  background: linear-gradient(135deg, rgba(193, 122, 66, 0.08) 0%, rgba(139, 74, 31, 0.08) 100%);
+}
+
+/* Beautiful Empty State Colors */
+.empty-state h3 {
+  color: var(--text-primary);
+}
+
+.empty-state p {
+  color: var(--text-muted);
+}
+
+/* Enhanced Chat Colors */
+.ai-message .message-avatar {
+  background: linear-gradient(135deg, var(--accent-electric) 0%, var(--accent-violet) 100%);
+}
+
+.user-message .message-avatar {
+  background: linear-gradient(135deg, var(--accent-emerald) 0%, var(--accent-teal) 100%);
+}
+
+.user-message .message-content {
+  background: linear-gradient(135deg, var(--accent-electric) 0%, var(--accent-violet) 100%);
+}
+
+/* Enhanced Tab Colors */
+.tab-button.active {
+  color: var(--accent-electric);
+  border-bottom-color: var(--accent-electric);
+}
+
+/* Beautiful Attendance Colors */
+.attendance-day.present {
+  background: linear-gradient(135deg, var(--accent-emerald) 0%, var(--accent-teal) 100%);
+}
+
+.attendance-day.absent {
+  background: linear-gradient(135deg, var(--accent-rose) 0%, #dc2626 100%);
+}
+
+.attendance-day.late {
+  background: linear-gradient(135deg, var(--accent-coral) 0%, #d97706 100%);
+}
+
+/* Enhanced Scrollbar Colors */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--accent-electric) 0%, var(--accent-violet) 100%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-violet);
+}
+
+/* Beautiful Selection Colors */
+::selection {
+  background: rgba(193, 122, 66, 0.2);
+  color: var(--text-primary);
+}
+
+/* Enhanced Focus Colors */
+:focus-visible {
+  outline: 2px solid var(--accent-electric);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   PINK & LIGHT COLOR INTEGRATIONS
+   ============================================ */
+
+/* Pink Text Variations */
+.text-pink {
+  color: var(--pink-600);
+}
+
+.text-pink-light {
+  color: var(--pink-400);
+}
+
+.text-rose {
+  color: var(--rose-600);
+}
+
+.text-light {
+  color: var(--light-700);
+  font-weight: 300;
+}
+
+.text-light-muted {
+  color: var(--light-600);
+  font-weight: 300;
+}
+
+/* Pink Gradient Text */
+.text-gradient-pink {
+  background: linear-gradient(135deg, var(--pink-500) 0%, var(--rose-500) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-light-pink {
+  background: linear-gradient(135deg, var(--pink-300) 0%, var(--pink-500) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced Navbar with Pink Accents */
+.navbar-pink-accent h1 {
+  background: linear-gradient(135deg, var(--indigo-500) 0%, var(--pink-500) 50%, var(--purple-600) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Pink Enhanced Buttons */
+.btn-primary-pink {
+  background: linear-gradient(135deg, var(--indigo-500) 0%, var(--pink-500) 100%);
+  color: white;
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.3);
+}
+
+.btn-primary-pink:hover {
+  background: linear-gradient(135deg, var(--indigo-600) 0%, var(--pink-600) 100%);
+  box-shadow: 0 12px 35px rgba(236, 72, 153, 0.4);
+}
+
+/* Light Enhanced Elements */
+.card-light-accent {
+  background: linear-gradient(135deg, var(--light-50) 0%, white 100%);
+  border: 1px solid var(--light-200);
+  box-shadow: 0 4px 20px rgba(240, 240, 240, 0.3);
+}
+
+/* Pink Stat Cards */
+.stat-card.pink::before {
+  background: linear-gradient(135deg, var(--pink-500) 0%, var(--rose-500) 100%);
+}
+
+.stat-card.pink .stat-value {
+  background: linear-gradient(135deg, var(--pink-500) 0%, var(--rose-500) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Light Stat Cards */
+.stat-card.light {
+  background: var(--light-50);
+  border: 1px solid var(--light-200);
+}
+
+.stat-card.light::before {
+  background: linear-gradient(135deg, var(--light-400) 0%, var(--light-600) 100%);
+}
+
+/* Pink Progress Bars */
+.progress-bar.pink .progress-fill {
+  background: linear-gradient(90deg, var(--pink-500) 0%, var(--rose-500) 100%);
+}
+
+/* Pink Badges */
+.badge.pink {
+  background: linear-gradient(135deg, var(--pink-100) 0%, var(--pink-200) 100%);
+  color: var(--pink-700);
+  border: 1px solid var(--pink-300);
+}
+
+.badge.light {
+  background: var(--light-100);
+  color: var(--light-800);
+  border: 1px solid var(--light-300);
+}
+
+/* Pink Links */
+.link-pink {
+  color: var(--pink-600);
+  transition: all 0.3s ease;
+}
+
+.link-pink:hover {
+  color: var(--pink-700);
+  text-decoration: underline;
+}
+
+/* Light Links */
+.link-light {
+  color: var(--light-700);
+  transition: all 0.3s ease;
+}
+
+.link-light:hover {
+  color: var(--light-800);
+}
+
+/* Pink Form Focus */
+.form-pink input:focus,
+.form-pink select:focus,
+.form-pink textarea:focus {
+  border-color: var(--pink-400);
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
+}
+
+/* Light Form Elements */
+.form-light input,
+.form-light select,
+.form-light textarea {
+  background: var(--light-50);
+  border-color: var(--light-300);
+  color: var(--light-800);
+}
+
+/* Pink Opportunity Cards */
+.opportunity-card.pink::before {
+  background: linear-gradient(90deg, var(--pink-500) 0%, var(--rose-500) 100%);
+}
+
+.opportunity-card.pink h4 {
+  background: linear-gradient(135deg, var(--pink-500) 0%, var(--rose-500) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Light Cards */
+.card.light {
+  background: var(--light-50);
+  border: 1px solid var(--light-200);
+}
+
+/* Pink Chat Elements */
+.ai-message.pink .message-avatar {
+  background: linear-gradient(135deg, var(--pink-500) 0%, var(--rose-500) 100%);
+}
+
+.user-message.pink .message-content {
+  background: linear-gradient(135deg, var(--pink-500) 0%, var(--rose-500) 100%);
+}
+
+/* Pink Animations */
+@keyframes pinkGlow {
+  0%, 100% { 
+    box-shadow: 0 0 5px rgba(236, 72, 153, 0.5);
+  }
+  50% { 
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.8), 0 0 30px rgba(236, 72, 153, 0.6);
+  }
+}
+
+.animate-pink-glow {
+  animation: pinkGlow 2s ease-in-out infinite;
+}
+
+@keyframes lightFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-light-float {
+  animation: lightFloat 3s ease-in-out infinite;
+}
+
+/* Pink Hover Effects */
+.hover-pink:hover {
+  color: var(--pink-600);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+.hover-light:hover {
+  color: var(--light-700);
+  background: var(--light-100);
+  transform: translateY(-1px);
+  transition: all 0.3s ease;
+}
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Queries</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/student-portal-shell.css">
+  <link rel="stylesheet" href="/css/portal-queries.css">
+</head>
+<body class="student-portal-page" data-page="queries">
+  <div class="portal-shell">
+    <header class="portal-header">
+      <div class="portal-header-left">
+        <div class="portal-logo">CC</div>
+        <div class="portal-title">Student Portal</div>
+      </div>
+      <div class="portal-header-right">
+        <div class="portal-user">Signed in as <strong data-student-name>Student</strong></div>
+        <button class="btn btn-outline btn-sm" type="button" data-action="logout">Logout</button>
+      </div>
+    </header>
+
+    <div class="portal-main">
+      <aside class="portal-sidebar">
+        <nav class="portal-nav">
+          <a href="/student/dashboard.html" data-nav="dashboard">Dashboard</a>
+          <a href="/student/applications.html" data-nav="applications">Applications</a>
+          <a href="/student/opportunities.html" data-nav="opportunities">Opportunities</a>
+          <a href="/student/extra-courses.html" data-nav="extra-courses">Extra Courses</a>
+          <a href="/student/wishlist.html" data-nav="wishlist">Wishlist</a>
+          <a href="/student/attendance.html" data-nav="attendance">Attendance</a>
+          <a href="/student/notifications.html" data-nav="notifications">Notifications</a>
+          <a href="/student/queries.html" data-nav="queries">Queries</a>
+          <a href="/student/profile.html" data-nav="profile">Profile</a>
+          <a href="/student/ai-assistant.html" data-nav="ai-assistant">AI Assistant</a>
+          <button type="button" data-action="logout">Logout</button>
+        </nav>
+      </aside>
+
+      <main class="portal-content">
+        <div class="page-topbar">
+          <h1 class="page-title">Company Queries</h1>
+          <p class="page-subtitle">Send questions directly to partner companies and track their replies.</p>
+        </div>
+
+        <section class="content-card">
+          <div class="card-header-row">
+            <div>
+              <h3>New Query</h3>
+              <p class="card-subtitle">Choose a company and send your request.</p>
+            </div>
+          </div>
+          <form id="queryForm" class="query-form">
+            <div class="split-grid">
+              <div class="form-group">
+                <label for="companySelect">Company</label>
+                <select id="companySelect" required>
+                  <option value="">Loading companies...</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="subjectInput">Subject</label>
+                <input id="subjectInput" type="text" placeholder="Eg. Internship onboarding steps" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="messageInput">Message</label>
+              <textarea id="messageInput" rows="4" placeholder="Write your question or request..." required></textarea>
+            </div>
+            <div class="btn-group">
+              <button class="btn btn-primary" type="submit">Send Query</button>
+              <button class="btn btn-outline" type="button" id="resetQueryForm">Reset</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="content-card">
+          <div class="card-header-row">
+            <div>
+              <h3>Your Queries</h3>
+              <p class="card-subtitle">Responses from companies will appear here.</p>
+            </div>
+            <button class="btn btn-outline btn-sm" type="button" id="refreshQueriesBtn">Refresh</button>
+          </div>
+          <div id="queriesList" class="query-list"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/student-portal-common.js"></script>
+  <script src="/js/student-queries-page.js"></script>
+</body>
+</html>

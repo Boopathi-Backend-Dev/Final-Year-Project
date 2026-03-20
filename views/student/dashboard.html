@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/student-portal-shell.css">
+</head>
+<body class="student-portal-page" data-page="dashboard">
+  <div class="portal-shell">
+    <header class="portal-header">
+      <div class="portal-header-left">
+        <div class="portal-logo">CC</div>
+        <div class="portal-title">Student Portal</div>
+      </div>
+      <div class="portal-header-right">
+        <div class="portal-user">Signed in as <strong data-student-name>Student</strong></div>
+        <button class="btn btn-outline btn-sm" type="button" data-action="logout">Logout</button>
+      </div>
+    </header>
+
+    <div class="portal-main">
+      <aside class="portal-sidebar">
+        <nav class="portal-nav">
+          <a href="/student/dashboard.html" data-nav="dashboard">Dashboard</a>
+          <a href="/student/applications.html" data-nav="applications">Applications</a>
+          <a href="/student/opportunities.html" data-nav="opportunities">Opportunities</a>
+          <a href="/student/extra-courses.html" data-nav="extra-courses">Extra Courses</a>
+          <a href="/student/wishlist.html" data-nav="wishlist">Wishlist</a>
+          <a href="/student/attendance.html" data-nav="attendance">Attendance</a>
+          <a href="/student/notifications.html" data-nav="notifications">Notifications</a>
+          <a href="/student/queries.html" data-nav="queries">Queries</a>
+          <a href="/student/profile.html" data-nav="profile">Profile</a>
+          <a href="/student/ai-assistant.html" data-nav="ai-assistant">AI Assistant</a>
+          <button type="button" data-action="logout">Logout</button>
+        </nav>
+      </aside>
+
+      <main class="portal-content">
+        <div class="page-topbar">
+          <h1 class="page-title">Dashboard</h1>
+          <p class="page-subtitle">Overview of applications and quick actions.</p>
+        </div>
+
+        <section class="content-card">
+          <h3>Application Summary</h3>
+          <div class="split-grid">
+            <div class="kpi-card">
+              <div class="kpi-label">Total Applications</div>
+              <div class="kpi-value" id="totalApplications">0</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Approved</div>
+              <div class="kpi-value" id="approvedApplications">0</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Pending</div>
+              <div class="kpi-value" id="pendingApplications">0</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-card" id="profileStrengthCard">
+          <div class="card-header-row">
+            <div>
+              <h3>Profile Strength</h3>
+              <p class="card-subtitle">Complete your profile to unlock better recommendations.</p>
+            </div>
+            <a class="btn btn-outline btn-sm" href="/student/profile.html">Update Profile</a>
+          </div>
+          <div class="profile-strength">
+            <div class="progress-bar">
+              <div class="progress-fill" id="profileProgressFill" style="width: 0%;"></div>
+            </div>
+            <div class="profile-progress-meta">
+              <span id="profileProgressLabel">0% complete</span>
+              <span id="profileMissingCount">0 missing</span>
+            </div>
+            <ul id="profileMissingList" class="tag-list"></ul>
+          </div>
+        </section>
+
+        <section class="content-card" id="recommendationsCard">
+          <div class="card-header-row">
+            <div>
+              <h3>Recommended For You</h3>
+              <p class="card-subtitle">Tailored opportunities based on your profile and activity.</p>
+            </div>
+            <button class="btn btn-outline btn-sm" type="button" id="refreshRecommendationsBtn">Refresh</button>
+          </div>
+          <div class="recommendation-grid" id="recommendationsGrid"></div>
+        </section>
+
+        <section class="content-card">
+          <h3>Quick Actions</h3>
+          <div class="quick-links">
+            <a class="btn btn-primary quick-link" href="/student/opportunities.html">Browse Opportunities</a>
+            <a class="btn btn-secondary quick-link" href="/student/applications.html">View Applications</a>
+            <a class="btn btn-info quick-link" href="/student/profile.html">Edit Profile</a>
+            <a class="btn btn-outline quick-link" href="/student/ai-assistant.html">Open AI Assistant</a>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/student-portal-common.js"></script>
+  <script src="/js/student-dashboard-page.js"></script>
+</body>
+</html>
+

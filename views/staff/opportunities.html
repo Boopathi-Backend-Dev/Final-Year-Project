@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opportunities - Staff</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/staff-portal-shell.css">
+</head>
+<body class="staff-portal-page" data-page="opportunities">
+  <div class="portal-shell">
+    <header class="portal-header">
+      <div class="portal-header-left">
+        <div class="portal-logo">CC</div>
+        <div class="portal-title">Staff Portal</div>
+      </div>
+      <div class="portal-header-right">
+        <div class="portal-user">Signed in as <strong data-staff-name>Staff</strong></div>
+        <button class="btn btn-outline btn-sm" type="button" data-action="logout">Logout</button>
+      </div>
+    </header>
+
+    <div class="portal-main">
+      <aside class="portal-sidebar">
+        <nav class="portal-nav">
+          <a href="/staff/dashboard.html" data-nav="dashboard">Dashboard</a>
+          <a href="/staff/students.html" data-nav="students">Students</a>
+          <a href="/staff/applications.html" data-nav="applications">Applications</a>
+          <a href="/staff/opportunities.html" data-nav="opportunities">Opportunities</a>
+          <a href="/staff/attendance.html" data-nav="attendance">Attendance</a>
+          <a href="/staff/analytics.html" data-nav="analytics">Analytics</a>
+          <a href="/staff/queries.html" data-nav="queries">Queries</a>
+          <a href="/staff/approvals.html" data-nav="approvals">Approvals</a>
+          <a href="/staff/profile.html" data-nav="profile">Profile</a>
+          <button type="button" data-action="logout">Logout</button>
+        </nav>
+      </aside>
+
+      <main class="portal-content">
+        <div class="page-topbar">
+          <h1 class="page-title">Opportunities Management</h1>
+          <p class="page-subtitle">Manage jobs, internships, and courses.</p>
+        </div>
+
+        <section class="content-card">
+          <div class="toolbar">
+            <input type="text" id="opportunitySearch" placeholder="Search jobs, internships, or courses" class="form-control">
+            <select id="opportunityStatus" class="form-control">
+              <option value="all">All Status</option>
+              <option value="draft">Draft</option>
+              <option value="review">In Review</option>
+              <option value="published">Published</option>
+              <option value="rejected">Rejected</option>
+            </select>
+            <select id="opportunitySort" class="form-control">
+              <option value="latest">Latest</option>
+              <option value="az">A-Z</option>
+              <option value="fees_low">Low Fees</option>
+              <option value="relevance">High Relevance</option>
+            </select>
+            <button class="btn btn-primary btn-sm" id="refreshOpportunities">Refresh</button>
+          </div>
+
+          <div style="margin-top: 2rem;">
+            <h4 style="margin-bottom: 0.75rem;">Jobs</h4>
+            <div id="opportunitiesJobsContainer"></div>
+          </div>
+
+          <div style="margin-top: 2rem;">
+            <h4 style="margin-bottom: 0.75rem;">Internships</h4>
+            <div id="opportunitiesInternshipsContainer"></div>
+          </div>
+
+          <div style="margin-top: 2rem;">
+            <h4 style="margin-bottom: 0.75rem;">Courses</h4>
+            <div id="opportunitiesCoursesContainer"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/staff-portal-common.js"></script>
+  <script src="/js/staff-opportunities-page.js"></script>
+</body>
+</html>
+

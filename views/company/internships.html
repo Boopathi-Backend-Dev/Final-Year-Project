@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internships - Company</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/company-portal-shell.css">
+</head>
+<body class="company-portal-page" data-page="internships">
+  <div class="portal-shell">
+    <header class="portal-header">
+      <div class="portal-header-left">
+        <div class="portal-logo">CC</div>
+        <div class="portal-title">Company Portal</div>
+      </div>
+      <div class="portal-header-right">
+        <div class="portal-user">Signed in as <strong data-company-name>Company</strong></div>
+        <button class="btn btn-outline btn-sm" type="button" data-action="logout">Logout</button>
+      </div>
+    </header>
+
+    <div class="portal-main">
+      <aside class="portal-sidebar">
+        <nav class="portal-nav">
+          <a href="/company/dashboard.html" data-nav="dashboard">Dashboard</a>
+          <a href="/company/profile.html" data-nav="profile">Profile</a>
+          <a href="/company/jobs.html" data-nav="jobs">Jobs</a>
+          <a href="/company/courses.html" data-nav="courses">Courses</a>
+          <a href="/company/internships.html" data-nav="internships">Internships</a>
+          <a href="/company/applicants.html" data-nav="applicants">Applicants</a>
+          <a href="/company/attendance.html" data-nav="attendance">Attendance</a>
+          <a href="/company/opportunities.html" data-nav="opportunities">Opportunities</a>
+          <a href="/company/queries.html" data-nav="queries">Queries</a>
+          <button type="button" data-action="logout">Logout</button>
+        </nav>
+      </aside>
+
+      <main class="portal-content">
+        <div class="page-topbar">
+          <h1 class="page-title">Post & Manage Internships</h1>
+          <p class="page-subtitle">Create and manage internship opportunities.</p>
+        </div>
+
+        <section class="content-card">
+          <h3>Post New Internship</h3>
+          <form id="internshipForm">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+              <div class="form-group">
+                <label for="internshipTitle">Internship Title *</label>
+                <input type="text" id="internshipTitle" name="title" placeholder="Software Development Intern" required class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="internshipDepartment">Department</label>
+                <select id="internshipDepartment" name="department" class="form-control">
+                  <option value="">All Departments</option>
+                  <option value="CSE">Computer Science</option>
+                  <option value="ECE">Electronics</option>
+                  <option value="MECH">Mechanical</option>
+                  <option value="CIVIL">Civil</option>
+                  <option value="EEE">Electrical</option>
+                </select>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+              <div class="form-group">
+                <label for="internshipDuration">Duration</label>
+                <input type="text" id="internshipDuration" name="duration" placeholder="3 months" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="internshipStipend">Stipend (₹)</label>
+                <input type="number" id="internshipStipend" name="stipend" placeholder="15000" step="100" class="form-control" />
+              </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 1rem;">
+              <label for="internshipLocation">Location</label>
+              <input type="text" id="internshipLocation" name="location" placeholder="Mumbai, India" class="form-control" />
+            </div>
+            <div class="form-group" style="margin-bottom: 1rem;">
+              <label for="internshipDeadline">Application Deadline</label>
+              <input type="date" id="internshipDeadline" name="applicationDeadline" class="form-control" />
+            </div>
+            <div class="form-group" style="margin-bottom: 1rem;">
+              <label for="internshipDescription">Description</label>
+              <textarea id="internshipDescription" name="description" placeholder="Describe the internship role..." rows="4" class="form-control"></textarea>
+            </div>
+            <div class="form-group" style="margin-bottom: 1rem;">
+              <label for="internshipSkills">Required Skills (comma separated)</label>
+              <input type="text" id="internshipSkills" name="requiredSkills" placeholder="JavaScript, React" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary">Post Internship</button>
+          </form>
+        </section>
+
+        <section class="content-card">
+          <div class="toolbar">
+            <button class="btn btn-primary btn-sm" id="refreshInternships">Refresh</button>
+          </div>
+          <div id="internshipsContainer">
+            <div class="empty-state">
+              <div class="empty-state-icon">🎓</div>
+              <h3>No internships posted yet</h3>
+              <p>Post an internship to get started</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/company-portal-common.js"></script>
+  <script src="/js/company-internships-page.js"></script>
+</body>
+</html>
+

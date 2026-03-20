@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/professional-enhancements.css">
+  <link rel="stylesheet" href="/css/tailwind-enhancements.css">
+  <link rel="stylesheet" href="/css/color-overrides.css">
+  <link rel="stylesheet" href="/css/enhanced-colors.css">
+  <link rel="stylesheet" href="/css/pink-light-colors.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
+  <link rel="stylesheet" href="/css/company-dashboard-light.css">
+  <link rel="stylesheet" href="/css/no-animations.css">
+  <link rel="stylesheet" href="/css/student-attendance.css">
+  <title>Attendance Dashboard - College Connect</title>
+</head>
+<body class="light-theme company-light-theme">
+  <div class="navbar company-light">
+    <div class="navbar-brand">
+      <div class="navbar-logo">
+        📋
+      </div>
+      <div>
+        <h1>Attendance Dashboard</h1>
+        <div class="navbar-subtitle">Intern Present / Absent Overview</div>
+      </div>
+    </div>
+    <div class="navbar-actions">
+      <div class="user-info company-light" id="userInfo">Loading...</div>
+      <button class="btn btn-outline company-light btn-sm" onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <div class="container company-light">
+    <!-- Select Internship -->
+    <div class="card company-light">
+      <div class="card-header">
+        <h3>🎯 Select Internship</h3>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="internshipSelect">Choose an internship to view attendance summary:</label>
+          <select id="internshipSelect" class="form-control">
+            <option value="">-- Select an internship --</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overall Summary -->
+    <div class="card company-light" id="summaryCard" style="display: none;">
+      <div class="card-header">
+        <h3>📊 Attendance Summary</h3>
+      </div>
+      <div class="card-body">
+        <div class="grid grid-2" style="margin-bottom: 1rem;">
+          <div class="form-group">
+            <label for="dashboardDate">Date</label>
+            <input type="date" id="dashboardDate" />
+          </div>
+          <div class="form-group" style="display:flex; align-items:end; gap:0.75rem;">
+            <button class="btn btn-secondary company-light" type="button" id="refreshDashboardBtn">
+              🔄 Refresh
+            </button>
+            <button class="btn btn-primary company-light" type="button" id="saveDashboardBtn">
+              💾 Save Present / Absent
+            </button>
+          </div>
+        </div>
+        <div class="summary-grid">
+          <div class="summary-item">
+            <label>Total Records</label>
+            <span id="totalRecords" class="summary-value">-</span>
+          </div>
+          <div class="summary-item">
+            <label>Present</label>
+            <span id="totalPresent" class="summary-value success">-</span>
+          </div>
+          <div class="summary-item">
+            <label>Absent</label>
+            <span id="totalAbsent" class="summary-value danger">-</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Per-student table -->
+    <div class="card company-light" id="tableCard" style="display: none;">
+      <div class="card-header">
+        <h3>👨‍🎓 Student Attendance Details</h3>
+      </div>
+      <div class="card-body">
+        <div id="attendanceDashboardTable">
+          <div class="empty-state company-light">
+            <div class="empty-state-icon">📋</div>
+            <h3>Select an internship</h3>
+            <p>Choose an internship to load students and mark present/absent.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/company-attendance-dashboard.js"></script>
+</body>
+</html>
+
+

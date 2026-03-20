@@ -1,0 +1,573 @@
+/* ============================================
+   STAFF DASHBOARD - LIGHT THEME COLORS
+   Dedicated light colors for staff dashboard
+   ============================================ */
+
+/* Staff Dashboard Light Color Variables */
+:root {
+  /* Staff Light Backgrounds */
+  --staff-bg-primary: #f8fafc;
+  --staff-bg-secondary: #f1f5f9;
+  --staff-bg-card: #ffffff;
+  --staff-bg-card-hover: #f8fafc;
+  --staff-bg-header: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  
+  /* Staff Light Text Colors */
+  --staff-text-primary: #1e293b;
+  --staff-text-secondary: #475569;
+  --staff-text-muted: #64748b;
+  --staff-text-accent: #c17a42;
+  
+  /* Staff Light Borders */
+  --staff-border-light: rgba(226, 232, 240, 0.8);
+  --staff-border-hover: rgba(203, 213, 225, 0.8);
+  
+  /* Staff Light Shadows */
+  --staff-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --staff-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --staff-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Disable animations for performance */
+.staff-light *, .staff-light *::before, .staff-light *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Staff Dashboard Body */
+body.staff-light-theme {
+  background: var(--staff-bg-primary);
+  color: var(--staff-text-primary);
+  min-height: 100vh;
+}
+
+/* Staff Navbar Light Theme */
+.navbar.staff-light {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--staff-border-light);
+  box-shadow: var(--staff-shadow);
+}
+
+.navbar.staff-light h1 {
+  color: var(--staff-text-primary);
+  font-weight: 700;
+}
+
+.navbar.staff-light .navbar-subtitle {
+  color: var(--staff-text-muted);
+}
+
+.navbar.staff-light .user-info {
+  color: var(--staff-text-secondary);
+  background: var(--staff-bg-card);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--staff-border-light);
+}
+
+/* Staff Container */
+.container.staff-light {
+  background: transparent;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Staff Stats Grid */
+.stats-grid.staff-light {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card.staff-light {
+  background: var(--staff-bg-card);
+  border: 1px solid var(--staff-border-light);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--staff-shadow);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card.staff-light::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #c17a42, #8b4a1f);
+}
+
+.stat-card.staff-light:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--staff-shadow-lg);
+  border-color: var(--staff-border-hover);
+}
+
+.stat-card.staff-light .stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.stat-card.staff-light h4 {
+  color: var(--staff-text-muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card.staff-light .stat-value {
+  color: var(--staff-text-primary);
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Staff Cards */
+.card.staff-light {
+  background: var(--staff-bg-card);
+  border: 1px solid var(--staff-border-light);
+  border-radius: 16px;
+  box-shadow: var(--staff-shadow);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.card.staff-light .card-header {
+  background: var(--staff-bg-header);
+  border-bottom: 1px solid var(--staff-border-light);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card.staff-light .card-header h3 {
+  color: var(--staff-text-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.card.staff-light .card-body {
+  padding: 2rem;
+  background: var(--staff-bg-card);
+}
+
+/* Staff Student Cards */
+.staff-students-grid.staff-light {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.staff-student-card.staff-light {
+  background: var(--staff-bg-card);
+  border: 1px solid var(--staff-border-light);
+  border-radius: 12px;
+  box-shadow: var(--staff-shadow);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.staff-student-card.staff-light:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--staff-shadow-lg);
+  border-color: var(--staff-border-hover);
+}
+
+.staff-student-card.staff-light .staff-student-header {
+  background: linear-gradient(135deg, #c17a42 0%, #8b4a1f 100%);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.staff-student-card.staff-light .staff-student-header h4 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.staff-student-card.staff-light .staff-student-header .badge {
+  margin-top: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.staff-student-card.staff-light .staff-student-body {
+  padding: 1.5rem;
+  background: var(--staff-bg-card);
+}
+
+.staff-student-card.staff-light .staff-detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--staff-border-light);
+}
+
+.staff-student-card.staff-light .staff-detail-item:last-child {
+  border-bottom: none;
+}
+
+.staff-student-card.staff-light .staff-detail-label {
+  color: var(--staff-text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.staff-student-card.staff-light .staff-detail-value {
+  color: var(--staff-text-primary);
+  font-weight: 600;
+}
+
+.staff-student-card.staff-light .staff-student-actions {
+  padding: 1rem 1.5rem;
+  background: var(--staff-bg-secondary);
+  border-top: 1px solid var(--staff-border-light);
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Staff Buttons */
+.btn.staff-light {
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.btn-primary.staff-light {
+  background: linear-gradient(135deg, #c17a42 0%, #8b4a1f 100%);
+  color: white;
+  box-shadow: var(--staff-shadow-sm);
+}
+
+.btn-primary.staff-light:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--staff-shadow);
+}
+
+.btn-outline.staff-light {
+  background: var(--staff-bg-card);
+  color: var(--staff-text-accent);
+  border-color: var(--staff-border-light);
+}
+
+.btn-outline.staff-light:hover {
+  background: var(--staff-bg-secondary);
+  border-color: var(--staff-border-hover);
+}
+
+.btn-success.staff-light {
+  background: linear-gradient(135deg, #0f766e 0%, #059669 100%);
+  color: white;
+}
+
+.btn-warning.staff-light {
+  background: linear-gradient(135deg, #d97706 0%, #d97706 100%);
+  color: white;
+}
+
+.btn-danger.staff-light {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+}
+
+/* Staff Forms */
+.staff-filters.staff-light {
+  background: var(--staff-bg-card);
+  border: 1px solid var(--staff-border-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.staff-filters.staff-light select {
+  background: var(--staff-bg-card);
+  border: 1px solid var(--staff-border-light);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  color: var(--staff-text-primary);
+  min-width: 200px;
+}
+
+.staff-filters.staff-light select:focus {
+  border-color: var(--staff-text-accent);
+  box-shadow: 0 0 0 3px rgba(193, 122, 66, 0.1);
+  outline: none;
+}
+
+/* Staff opportunities search */
+.staff-opportunity-actions {
+  align-items: center;
+}
+
+.staff-opportunity-actions .search-input-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.staff-opportunity-actions .search-input-group input {
+  min-width: 260px;
+  background: var(--staff-bg-card);
+  border: 1px solid var(--staff-border-light);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  color: var(--staff-text-primary);
+}
+
+.staff-opportunity-actions .search-input-group input:focus {
+  border-color: var(--staff-text-accent);
+  box-shadow: 0 0 0 3px rgba(193, 122, 66, 0.1);
+  outline: none;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.analytics-grid h4 {
+  margin-bottom: 0.5rem;
+}
+
+.analytics-list {
+  border: 1px solid var(--staff-border-light);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.analytics-list .analytics-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-top: 1px solid var(--staff-border-light);
+  background: var(--staff-bg-card);
+}
+
+.analytics-list .analytics-row:first-child {
+  border-top: none;
+}
+
+.approval-actions {
+  display: inline-flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+/* Staff Empty States */
+.empty-state.staff-light {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--staff-text-muted);
+}
+
+.empty-state.staff-light .empty-state-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state.staff-light h3 {
+  color: var(--staff-text-secondary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state.staff-light p {
+  color: var(--staff-text-muted);
+  font-size: 0.875rem;
+}
+
+/* Staff Modals */
+.modal.staff-light {
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.modal.staff-light .modal-content {
+  background: var(--staff-bg-card);
+  border: 1px solid var(--staff-border-light);
+  border-radius: 16px;
+  box-shadow: var(--staff-shadow-lg);
+  color: var(--staff-text-primary);
+}
+
+.modal.staff-light .modal-header {
+  background: var(--staff-bg-header);
+  border-bottom: 1px solid var(--staff-border-light);
+  padding: 1.5rem 2rem;
+  border-radius: 16px 16px 0 0;
+}
+
+.modal.staff-light .modal-header h3 {
+  color: var(--staff-text-primary);
+  margin: 0;
+  font-weight: 700;
+}
+
+.modal.staff-light .modal-body {
+  padding: 2rem;
+  background: var(--staff-bg-card);
+}
+
+/* Staff Badges */
+.badge.staff-light {
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid transparent;
+}
+
+.badge-success.staff-light {
+  background: rgba(16, 185, 129, 0.1);
+  color: #047857;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.badge-warning.staff-light {
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.badge-danger.staff-light {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.badge-primary.staff-light {
+  background: rgba(193, 122, 66, 0.1);
+  color: #1d4ed8;
+  border-color: rgba(193, 122, 66, 0.3);
+}
+
+/* Staff Loading States */
+.staff-loading.staff-light {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--staff-border-light);
+  border-top-color: var(--staff-text-accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Staff Responsive Design */
+@media (max-width: 768px) {
+  .container.staff-light {
+    padding: 1rem;
+  }
+  
+  .stats-grid.staff-light {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .staff-students-grid.staff-light {
+    grid-template-columns: 1fr;
+  }
+  
+  .staff-filters.staff-light {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .staff-filters.staff-light select {
+    min-width: auto;
+  }
+}
+
+/* Staff Animations */
+.animate-fade-in.staff-light {
+  animation: staffFadeIn 0.6s ease-out;
+}
+
+.animate-bounce-in.staff-light {
+  animation: staffBounceIn 0.8s ease-out;
+}
+
+.stagger-1.staff-light { animation-delay: 0.1s; }
+.stagger-2.staff-light { animation-delay: 0.2s; }
+.stagger-3.staff-light { animation-delay: 0.3s; }
+.stagger-4.staff-light { animation-delay: 0.4s; }
+
+@keyframes staffFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes staffBounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(20px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-5px);
+  }
+  70% {
+    transform: scale(0.95) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Staff Scrollbar */
+.staff-light ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.staff-light ::-webkit-scrollbar-track {
+  background: var(--staff-bg-secondary);
+  border-radius: 4px;
+}
+
+.staff-light ::-webkit-scrollbar-thumb {
+  background: var(--staff-border-hover);
+  border-radius: 4px;
+  border: 1px solid var(--staff-bg-secondary);
+}
+
+.staff-light ::-webkit-scrollbar-thumb:hover {
+  background: var(--staff-text-muted);
+}
+

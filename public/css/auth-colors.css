@@ -1,0 +1,104 @@
+/* Auth pages color overrides (login/register only) */
+
+body.auth-theme {
+  background: linear-gradient(135deg, #f7f1e8 0%, #fbf8f2 45%, #eef5f4 100%);
+  color: #1f2937;
+}
+
+body.auth-theme .navbar.light-theme {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid #ecdcc7;
+}
+
+body.auth-theme .page-header h2 {
+  color: #1f2937;
+}
+
+body.auth-theme .page-header p,
+body.auth-theme .light-text-muted {
+  color: #7c6f64;
+}
+
+body.auth-theme .card.light-theme {
+  background: #ffffff;
+  border-color: #ecdcc7;
+  box-shadow: 0 14px 30px rgba(124, 111, 100, 0.12);
+}
+
+body.auth-theme .card-header-icon {
+  background: #fde6d1;
+  color: #8b5a2b;
+}
+
+body.auth-theme .btn-primary,
+body.auth-theme .btn-primary.light-theme {
+  background: var(--primary);
+  color: #3a2a1b;
+  border: 1px solid #d8a578;
+  box-shadow: 0 10px 20px rgba(193, 122, 66, 0.25);
+}
+
+body.auth-theme .btn-primary:hover,
+body.auth-theme .btn-primary.light-theme:hover {
+  background: var(--primary-dark);
+  color: #2f2317;
+}
+
+body.auth-theme .btn-info,
+body.auth-theme .btn-info.light-theme {
+  background: var(--secondary);
+  color: #f8fafc;
+  border: 1px solid var(--secondary);
+  box-shadow: 0 10px 20px rgba(15, 118, 110, 0.25);
+}
+
+body.auth-theme .btn-info:hover,
+body.auth-theme .btn-info.light-theme:hover {
+  background: #1f8a70;
+}
+
+body.auth-theme .btn-pink,
+body.auth-theme .btn-pink.light-theme {
+  background: var(--primary-dark);
+  color: #fff7ed;
+  border: 1px solid var(--primary-dark);
+  box-shadow: 0 10px 20px rgba(194, 65, 12, 0.25);
+}
+
+body.auth-theme .btn-pink:hover,
+body.auth-theme .btn-pink.light-theme:hover {
+  background: #6b3f2b;
+}
+
+body.auth-theme .link-pink {
+  color: var(--primary-dark);
+}
+
+body.auth-theme .link-pink:hover {
+  color: #6b3f2b;
+}
+
+body.auth-theme .card-pink {
+  background: linear-gradient(135deg, #fff4e6 0%, #ffffff 70%);
+  border: 1px solid #f0d6be;
+  box-shadow: 0 12px 24px rgba(194, 65, 12, 0.12);
+}
+
+body.auth-theme .text-gradient-pink {
+  background: linear-gradient(90deg, #0f766e 0%, #c2410c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body.auth-theme .text-pink-600 {
+  color: #c2410c;
+}
+
+body.auth-theme .text-emerald-600 {
+  color: #0f766e;
+}
+
+body.auth-theme .text-amber-600 {
+  color: #b45309;
+}

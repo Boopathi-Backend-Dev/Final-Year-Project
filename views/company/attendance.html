@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance - Company</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/company-portal-shell.css">
+</head>
+<body class="company-portal-page" data-page="attendance">
+  <div class="portal-shell">
+    <header class="portal-header">
+      <div class="portal-header-left">
+        <div class="portal-logo">CC</div>
+        <div class="portal-title">Company Portal</div>
+      </div>
+      <div class="portal-header-right">
+        <div class="portal-user">Signed in as <strong data-company-name>Company</strong></div>
+        <button class="btn btn-outline btn-sm" type="button" data-action="logout">Logout</button>
+      </div>
+    </header>
+
+    <div class="portal-main">
+      <aside class="portal-sidebar">
+        <nav class="portal-nav">
+          <a href="/company/dashboard.html" data-nav="dashboard">Dashboard</a>
+          <a href="/company/profile.html" data-nav="profile">Profile</a>
+          <a href="/company/jobs.html" data-nav="jobs">Jobs</a>
+          <a href="/company/courses.html" data-nav="courses">Courses</a>
+          <a href="/company/internships.html" data-nav="internships">Internships</a>
+          <a href="/company/applicants.html" data-nav="applicants">Applicants</a>
+          <a href="/company/attendance.html" data-nav="attendance">Attendance</a>
+          <a href="/company/opportunities.html" data-nav="opportunities">Opportunities</a>
+          <a href="/company/queries.html" data-nav="queries">Queries</a>
+          <button type="button" data-action="logout">Logout</button>
+        </nav>
+      </aside>
+
+      <main class="portal-content">
+        <div class="page-topbar">
+          <h1 class="page-title">Mark Internship Attendance</h1>
+          <p class="page-subtitle">Mark attendance for internship students.</p>
+        </div>
+
+        <section class="content-card">
+          <h3>Mark Attendance</h3>
+          <form id="attendanceForm">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+              <div class="form-group">
+                <label for="internshipId">Internship *</label>
+                <select id="internshipId" name="internshipId" required class="form-control">
+                  <option value="">Select Internship</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="studentId">Student *</label>
+                <select id="studentId" name="studentId" required class="form-control">
+                  <option value="">Select Student</option>
+                </select>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+              <div class="form-group">
+                <label for="attendanceDate">Date *</label>
+                <input type="date" id="attendanceDate" name="attendanceDate" required class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="present">Present *</label>
+                <select id="present" name="present" required class="form-control">
+                  <option value="1">Present</option>
+                  <option value="0">Absent</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 1rem;">
+              <label for="notes">Notes</label>
+              <textarea id="notes" name="notes" placeholder="Additional notes..." rows="3" class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Mark Attendance</button>
+          </form>
+        </section>
+
+        <section class="content-card">
+          <div class="toolbar">
+            <select id="viewInternshipId" class="form-control">
+              <option value="">Select Internship to View</option>
+            </select>
+            <button class="btn btn-primary btn-sm" id="viewAttendance">View Attendance</button>
+          </div>
+          <div id="attendanceContainer">
+            <div class="empty-state">
+              <div class="empty-state-icon">📋</div>
+              <h3>No attendance records</h3>
+              <p>Select an internship to view attendance records</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/company-portal-common.js"></script>
+  <script src="/js/company-attendance-page.js"></script>
+</body>
+</html>
+

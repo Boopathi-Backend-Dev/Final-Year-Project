@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses - Company</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/company-portal-shell.css">
+</head>
+<body class="company-portal-page" data-page="courses">
+  <div class="portal-shell">
+    <header class="portal-header">
+      <div class="portal-header-left">
+        <div class="portal-logo">CC</div>
+        <div class="portal-title">Company Portal</div>
+      </div>
+      <div class="portal-header-right">
+        <div class="portal-user">Signed in as <strong data-company-name>Company</strong></div>
+        <button class="btn btn-outline btn-sm" type="button" data-action="logout">Logout</button>
+      </div>
+    </header>
+
+    <div class="portal-main">
+      <aside class="portal-sidebar">
+        <nav class="portal-nav">
+          <a href="/company/dashboard.html" data-nav="dashboard">Dashboard</a>
+          <a href="/company/profile.html" data-nav="profile">Profile</a>
+          <a href="/company/jobs.html" data-nav="jobs">Jobs</a>
+          <a href="/company/courses.html" data-nav="courses">Courses</a>
+          <a href="/company/internships.html" data-nav="internships">Internships</a>
+          <a href="/company/applicants.html" data-nav="applicants">Applicants</a>
+          <a href="/company/attendance.html" data-nav="attendance">Attendance</a>
+          <a href="/company/opportunities.html" data-nav="opportunities">Opportunities</a>
+          <a href="/company/queries.html" data-nav="queries">Queries</a>
+          <button type="button" data-action="logout">Logout</button>
+        </nav>
+      </aside>
+
+      <main class="portal-content">
+        <div class="page-topbar">
+          <h1 class="page-title">Post & Manage Courses</h1>
+          <p class="page-subtitle">Create and manage training courses.</p>
+        </div>
+
+        <section class="content-card">
+          <h3>Post New Course</h3>
+          <form id="courseForm">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+              <div class="form-group">
+                <label for="courseTitle">Course Title *</label>
+                <input type="text" id="courseTitle" name="title" placeholder="Full Stack Development" required class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="courseDepartment">Department</label>
+                <select id="courseDepartment" name="department" class="form-control">
+                  <option value="">All Departments</option>
+                  <option value="CSE">Computer Science</option>
+                  <option value="ECE">Electronics</option>
+                  <option value="MECH">Mechanical</option>
+                  <option value="CIVIL">Civil</option>
+                  <option value="EEE">Electrical</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 1rem;">
+              <label for="courseDescription">Course Description</label>
+              <textarea id="courseDescription" name="description" placeholder="Describe the course content..." rows="4" class="form-control"></textarea>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+              <div class="form-group">
+                <label for="courseSkills">Required Skills</label>
+                <input type="text" id="courseSkills" name="requiredSkills" placeholder="Basic programming" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="courseFees">Course Fees (₹)</label>
+                <input type="number" id="courseFees" name="fees" placeholder="5000" step="0.01" class="form-control" />
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+              <div class="form-group">
+                <label for="courseDuration">Duration</label>
+                <input type="text" id="courseDuration" name="duration" placeholder="3 months" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="courseMode">Mode</label>
+                <select id="courseMode" name="mode" class="form-control">
+                  <option value="">Select Mode</option>
+                  <option value="online">Online</option>
+                  <option value="offline">Offline</option>
+                  <option value="hybrid">Hybrid</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 1rem;">
+              <label for="courseLink">Course Link / Registration URL</label>
+              <input type="url" id="courseLink" name="courseLink" placeholder="https://example.com/course" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary">Post Course</button>
+          </form>
+        </section>
+
+        <section class="content-card">
+          <div class="toolbar">
+            <button class="btn btn-primary btn-sm" id="refreshCourses">Refresh</button>
+          </div>
+          <div id="coursesContainer">
+            <div class="empty-state">
+              <div class="empty-state-icon">📚</div>
+              <h3>No courses posted yet</h3>
+              <p>Post a course to get started</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/company-portal-common.js"></script>
+  <script src="/js/company-courses-page.js"></script>
+</body>
+</html>
+

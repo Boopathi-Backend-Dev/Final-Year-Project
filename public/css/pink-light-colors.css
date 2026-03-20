@@ -1,0 +1,400 @@
+/* ============================================
+   PINK & LIGHT TEXT COLORS
+   Beautiful pink and light color variations
+   ============================================ */
+
+/* Pink Color Palette */
+:root {
+  /* Pink Shades */
+  --pink-50: #fff7f1;
+  --pink-100: #fee9dd;
+  --pink-200: #f8d2bf;
+  --pink-300: #f0b499;
+  --pink-400: #e59073;
+  --pink-500: #d47453;
+  --pink-600: #c05e45;
+  --pink-700: #a04b38;
+  --pink-800: #7c3a2c;
+  --pink-900: #5e2a21;
+  
+  /* Rose Shades */
+  --rose-50: #fff2e9;
+  --rose-100: #ffe2d4;
+  --rose-200: #f6c5ad;
+  --rose-300: #eea27f;
+  --rose-400: #e4815f;
+  --rose-500: #d1633f;
+  --rose-600: #b84c2f;
+  --rose-700: #973e27;
+  --rose-800: #753120;
+  --rose-900: #592317;
+  
+  /* Light Colors */
+  --light-50: #fffdf9;
+  --light-100: #faf5ef;
+  --light-200: #f4ede4;
+  --light-300: #ede2d5;
+  --light-400: #e1d2c1;
+  --light-500: #d4c2ad;
+  --light-600: #b9a48f;
+  --light-700: #9a7f6a;
+  --light-800: #7a6152;
+  --light-900: #5b483f;
+  
+  /* Pink Gradients */
+  --gradient-pink: linear-gradient(135deg, var(--pink-400) 0%, var(--pink-600) 100%);
+  --gradient-rose: linear-gradient(135deg, var(--rose-400) 0%, var(--rose-600) 100%);
+  --gradient-pink-light: linear-gradient(135deg, var(--pink-200) 0%, var(--pink-400) 100%);
+  --gradient-rose-light: linear-gradient(135deg, var(--rose-200) 0%, var(--rose-400) 100%);
+  --gradient-pink-to-purple: linear-gradient(135deg, var(--pink-500) 0%, var(--rose-600) 100%);
+  --gradient-light-pink: linear-gradient(135deg, var(--light-100) 0%, var(--pink-100) 100%);
+  
+  /* Pink Shadows */
+  --shadow-pink: 0 4px 6px -1px rgba(236, 72, 153, 0.2);
+  --shadow-pink-lg: 0 10px 15px -3px rgba(236, 72, 153, 0.3);
+  --shadow-rose: 0 4px 6px -1px rgba(244, 63, 94, 0.2);
+  --shadow-rose-lg: 0 10px 15px -3px rgba(244, 63, 94, 0.3);
+  --shadow-light: 0 2px 4px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Pink Text Colors */
+.text-pink-50 { color: var(--pink-50); }
+.text-pink-100 { color: var(--pink-100); }
+.text-pink-200 { color: var(--pink-200); }
+.text-pink-300 { color: var(--pink-300); }
+.text-pink-400 { color: var(--pink-400); }
+.text-pink-500 { color: var(--pink-500); }
+.text-pink-600 { color: var(--pink-600); }
+.text-pink-700 { color: var(--pink-700); }
+.text-pink-800 { color: var(--pink-800); }
+.text-pink-900 { color: var(--pink-900); }
+
+/* Rose Text Colors */
+.text-rose-50 { color: var(--rose-50); }
+.text-rose-100 { color: var(--rose-100); }
+.text-rose-200 { color: var(--rose-200); }
+.text-rose-300 { color: var(--rose-300); }
+.text-rose-400 { color: var(--rose-400); }
+.text-rose-500 { color: var(--rose-500); }
+.text-rose-600 { color: var(--rose-600); }
+.text-rose-700 { color: var(--rose-700); }
+.text-rose-800 { color: var(--rose-800); }
+.text-rose-900 { color: var(--rose-900); }
+
+/* Light Text Colors */
+.text-light-50 { color: var(--light-50); }
+.text-light-100 { color: var(--light-100); }
+.text-light-200 { color: var(--light-200); }
+.text-light-300 { color: var(--light-300); }
+.text-light-400 { color: var(--light-400); }
+.text-light-500 { color: var(--light-500); }
+.text-light-600 { color: var(--light-600); }
+.text-light-700 { color: var(--light-700); }
+.text-light-800 { color: var(--light-800); }
+.text-light-900 { color: var(--light-900); }
+
+/* Pink Background Colors */
+.bg-pink-50 { background-color: var(--pink-50); }
+.bg-pink-100 { background-color: var(--pink-100); }
+.bg-pink-200 { background-color: var(--pink-200); }
+.bg-pink-300 { background-color: var(--pink-300); }
+.bg-pink-400 { background-color: var(--pink-400); }
+.bg-pink-500 { background-color: var(--pink-500); }
+.bg-pink-600 { background-color: var(--pink-600); }
+
+/* Enhanced Pink Elements */
+.pink-accent {
+  color: var(--pink-600);
+  font-weight: 600;
+}
+
+.pink-accent:hover {
+  color: var(--pink-700);
+}
+
+.light-text {
+  color: var(--light-700);
+  font-weight: 300;
+}
+
+.light-text-muted {
+  color: var(--light-600);
+  font-weight: 300;
+}
+
+/* Pink Buttons */
+.btn-pink {
+  background: var(--gradient-pink);
+  color: white;
+  box-shadow: var(--shadow-pink);
+  transition: all 0.3s ease;
+}
+
+.btn-pink:hover {
+  background: var(--gradient-rose);
+  box-shadow: var(--shadow-pink-lg);
+  transform: translateY(-2px);
+}
+
+.btn-rose {
+  background: var(--gradient-rose);
+  color: white;
+  box-shadow: var(--shadow-rose);
+  transition: all 0.3s ease;
+}
+
+.btn-rose:hover {
+  box-shadow: var(--shadow-rose-lg);
+  transform: translateY(-2px);
+}
+
+.btn-light {
+  background: var(--light-100);
+  color: var(--slate-700);
+  border: 1px solid var(--light-300);
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+  background: var(--light-200);
+  transform: translateY(-1px);
+}
+
+/* Pink Cards */
+.card-pink {
+  background: linear-gradient(135deg, var(--pink-50) 0%, white 100%);
+  border: 1px solid var(--pink-200);
+  box-shadow: var(--shadow-pink);
+}
+
+.card-pink:hover {
+  border-color: var(--pink-300);
+  box-shadow: var(--shadow-pink-lg);
+}
+
+.card-light {
+  background: var(--light-50);
+  border: 1px solid var(--light-200);
+  box-shadow: var(--shadow-light);
+}
+
+/* Pink Headers */
+.header-pink h1,
+.header-pink h2,
+.header-pink h3 {
+  background: var(--gradient-pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header-rose h1,
+.header-rose h2,
+.header-rose h3 {
+  background: var(--gradient-rose);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Pink Badges */
+.badge-pink {
+  background: linear-gradient(135deg, var(--pink-100) 0%, var(--pink-200) 100%);
+  color: var(--pink-700);
+  border: 1px solid var(--pink-300);
+}
+
+.badge-rose {
+  background: linear-gradient(135deg, var(--rose-100) 0%, var(--rose-200) 100%);
+  color: var(--rose-700);
+  border: 1px solid var(--rose-300);
+}
+
+.badge-light {
+  background: var(--light-100);
+  color: var(--light-800);
+  border: 1px solid var(--light-300);
+}
+
+/* Pink Form Elements */
+.form-pink input:focus,
+.form-pink select:focus,
+.form-pink textarea:focus {
+  border-color: var(--pink-400);
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
+}
+
+.form-light input,
+.form-light select,
+.form-light textarea {
+  background: var(--light-50);
+  border-color: var(--light-300);
+}
+
+/* Pink Progress Bars */
+.progress-pink .progress-fill {
+  background: var(--gradient-pink);
+}
+
+.progress-rose .progress-fill {
+  background: var(--gradient-rose);
+}
+
+/* Pink Stat Cards */
+.stat-card-pink {
+  background: linear-gradient(135deg, var(--pink-50) 0%, white 100%);
+  border-left: 4px solid var(--pink-500);
+}
+
+.stat-card-pink::before {
+  background: var(--gradient-pink);
+}
+
+.stat-card-pink .stat-value {
+  background: var(--gradient-pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Light Stat Cards */
+.stat-card-light {
+  background: var(--light-50);
+  border-left: 4px solid var(--light-400);
+}
+
+.stat-card-light .stat-value {
+  color: var(--light-800);
+}
+
+/* Pink Navigation */
+.navbar-pink {
+  background: linear-gradient(135deg, var(--pink-50) 0%, white 100%);
+  border-bottom: 1px solid var(--pink-200);
+}
+
+.navbar-pink h1 {
+  background: var(--gradient-pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Pink Links */
+.link-pink {
+  color: var(--pink-600);
+  transition: color 0.3s ease;
+}
+
+.link-pink:hover {
+  color: var(--pink-700);
+}
+
+.link-light {
+  color: var(--light-700);
+  transition: color 0.3s ease;
+}
+
+.link-light:hover {
+  color: var(--light-800);
+}
+
+/* Pink Tables */
+.table-pink thead {
+  background: linear-gradient(135deg, var(--pink-50) 0%, var(--pink-100) 100%);
+}
+
+.table-pink tbody tr:hover {
+  background: linear-gradient(135deg, var(--pink-25) 0%, var(--pink-50) 100%);
+}
+
+/* Pink Modals */
+.modal-pink .modal-content {
+  background: linear-gradient(135deg, var(--pink-50) 0%, white 100%);
+  border: 1px solid var(--pink-200);
+}
+
+.modal-pink .modal-header {
+  background: linear-gradient(135deg, var(--pink-100) 0%, var(--pink-50) 100%);
+  border-bottom: 1px solid var(--pink-200);
+}
+
+/* Pink Alerts */
+.alert-pink {
+  background: linear-gradient(135deg, var(--pink-50) 0%, var(--pink-100) 100%);
+  border-left: 4px solid var(--pink-500);
+  color: var(--pink-800);
+}
+
+.alert-light {
+  background: var(--light-50);
+  border-left: 4px solid var(--light-400);
+  color: var(--light-800);
+}
+
+/* Pink Tooltips */
+.tooltip-pink {
+  background: var(--pink-600);
+  color: white;
+  box-shadow: var(--shadow-pink);
+}
+
+.tooltip-light {
+  background: var(--light-100);
+  color: var(--light-800);
+  border: 1px solid var(--light-300);
+  box-shadow: var(--shadow-light);
+}
+
+/* Pink Animations */
+@keyframes pinkPulse {
+  0%, 100% { 
+    box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.4);
+  }
+  50% { 
+    box-shadow: 0 0 0 10px rgba(236, 72, 153, 0);
+  }
+}
+
+.animate-pink-pulse {
+  animation: pinkPulse 2s infinite;
+}
+
+@keyframes lightGlow {
+  0%, 100% { 
+    box-shadow: 0 0 5px rgba(240, 240, 240, 0.5);
+  }
+  50% { 
+    box-shadow: 0 0 20px rgba(240, 240, 240, 0.8);
+  }
+}
+
+.animate-light-glow {
+  animation: lightGlow 2s infinite;
+}
+
+/* Pink Hover Effects */
+.hover-pink:hover {
+  color: var(--pink-600);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+.hover-light:hover {
+  color: var(--light-700);
+  transform: translateY(-1px);
+  transition: all 0.3s ease;
+}
+
+/* Pink Borders */
+.border-pink { border-color: var(--pink-300); }
+.border-pink-light { border-color: var(--pink-200); }
+.border-rose { border-color: var(--rose-300); }
+.border-light { border-color: var(--light-300); }
+
+/* Pink Shadows */
+.shadow-pink { box-shadow: var(--shadow-pink); }
+.shadow-pink-lg { box-shadow: var(--shadow-pink-lg); }
+.shadow-rose { box-shadow: var(--shadow-rose); }
+.shadow-light { box-shadow: var(--shadow-light); }

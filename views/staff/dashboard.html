@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/staff-portal-shell.css">
+</head>
+<body class="staff-portal-page" data-page="dashboard">
+  <div class="portal-shell">
+    <header class="portal-header">
+      <div class="portal-header-left">
+        <div class="portal-logo">CC</div>
+        <div class="portal-title">Staff Portal</div>
+      </div>
+      <div class="portal-header-right">
+        <div class="portal-user">Signed in as <strong data-staff-name>Staff</strong></div>
+        <button class="btn btn-outline btn-sm" type="button" data-action="logout">Logout</button>
+      </div>
+    </header>
+
+    <div class="portal-main">
+      <aside class="portal-sidebar">
+        <nav class="portal-nav">
+          <a href="/staff/dashboard.html" data-nav="dashboard">Dashboard</a>
+          <a href="/staff/students.html" data-nav="students">Students</a>
+          <a href="/staff/applications.html" data-nav="applications">Applications</a>
+          <a href="/staff/opportunities.html" data-nav="opportunities">Opportunities</a>
+          <a href="/staff/attendance.html" data-nav="attendance">Attendance</a>
+          <a href="/staff/analytics.html" data-nav="analytics">Analytics</a>
+          <a href="/staff/queries.html" data-nav="queries">Queries</a>
+          <a href="/staff/approvals.html" data-nav="approvals">Approvals</a>
+          <a href="/staff/profile.html" data-nav="profile">Profile</a>
+          <button type="button" data-action="logout">Logout</button>
+        </nav>
+      </aside>
+
+      <main class="portal-content">
+        <div class="page-topbar">
+          <h1 class="page-title">Dashboard</h1>
+          <p class="page-subtitle">Overview of students, applications, and quick actions.</p>
+        </div>
+
+        <section class="content-card">
+          <h3>Summary Statistics</h3>
+          <div class="split-grid">
+            <div class="kpi-card">
+              <div class="kpi-label">Total Students</div>
+              <div class="kpi-value" id="totalStudents">0</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Approved Profiles</div>
+              <div class="kpi-value" id="approvedStudents">0</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Total Applications</div>
+              <div class="kpi-value" id="totalApplications">0</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Pending Approvals</div>
+              <div class="kpi-value" id="pendingApprovals">0</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-card">
+          <h3>Quick Actions</h3>
+          <div class="quick-links">
+            <a class="btn btn-primary quick-link" href="/staff/students.html">Manage Students</a>
+            <a class="btn btn-secondary quick-link" href="/staff/applications.html">View Applications</a>
+            <a class="btn btn-info quick-link" href="/staff/opportunities.html">Manage Opportunities</a>
+            <a class="btn btn-outline quick-link" href="/staff/approvals.html">Review Approvals</a>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/staff-portal-common.js"></script>
+  <script src="/js/staff-dashboard-page.js"></script>
+</body>
+</html>
+

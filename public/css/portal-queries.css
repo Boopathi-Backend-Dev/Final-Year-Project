@@ -1,0 +1,121 @@
+.query-form .split-grid {
+  margin-bottom: 0.75rem;
+}
+
+.query-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.query-card {
+  border: 1px solid var(--shell-border);
+  border-radius: 12px;
+  padding: 0.9rem;
+  background: #ffffff;
+}
+
+.query-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.query-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.query-meta {
+  color: var(--shell-text-muted);
+  font-size: 0.82rem;
+}
+
+.query-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.query-message {
+  margin-top: 0.75rem;
+  white-space: pre-wrap;
+  font-size: 0.95rem;
+}
+
+.query-reply {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border: 1px dashed var(--shell-border);
+  border-radius: 10px;
+  background: rgba(148, 163, 184, 0.08);
+}
+
+.query-reply-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--shell-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 0.35rem;
+}
+
+.query-reply-text {
+  white-space: pre-wrap;
+}
+
+.query-response {
+  margin-top: 0.9rem;
+  border-top: 1px solid var(--shell-border);
+  padding-top: 0.9rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.response-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: flex-end;
+}
+
+.response-row .form-group {
+  flex: 1;
+  min-width: 180px;
+}
+
+.query-empty {
+  text-align: center;
+  color: var(--shell-text-muted);
+  padding: 1.5rem 0.5rem;
+  border: 1px dashed var(--shell-border);
+  border-radius: 12px;
+  background: rgba(148, 163, 184, 0.08);
+}
+
+.status-open {
+  background: #fff7ed;
+  color: #9a3412;
+}
+
+.status-answered {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.status-closed {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+body[data-theme="dark"] .query-card {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+body[data-theme="dark"] .query-reply {
+  background: rgba(15, 23, 42, 0.5);
+}

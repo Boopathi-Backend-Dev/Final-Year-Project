@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Study Assistant</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/student-portal-shell.css">
+</head>
+<body class="student-portal-page" data-page="ai-assistant">
+  <div class="portal-shell">
+    <header class="portal-header">
+      <div class="portal-header-left">
+        <div class="portal-logo">CC</div>
+        <div class="portal-title">Student Portal</div>
+      </div>
+      <div class="portal-header-right">
+        <div class="portal-user">Signed in as <strong data-student-name>Student</strong></div>
+        <button class="btn btn-outline btn-sm" type="button" data-action="logout">Logout</button>
+      </div>
+    </header>
+
+    <div class="portal-main">
+      <aside class="portal-sidebar">
+        <nav class="portal-nav">
+          <a href="/student/dashboard.html" data-nav="dashboard">Dashboard</a>
+          <a href="/student/applications.html" data-nav="applications">Applications</a>
+          <a href="/student/opportunities.html" data-nav="opportunities">Opportunities</a>
+          <a href="/student/extra-courses.html" data-nav="extra-courses">Extra Courses</a>
+          <a href="/student/wishlist.html" data-nav="wishlist">Wishlist</a>
+          <a href="/student/attendance.html" data-nav="attendance">Attendance</a>
+          <a href="/student/notifications.html" data-nav="notifications">Notifications</a>
+          <a href="/student/queries.html" data-nav="queries">Queries</a>
+          <a href="/student/profile.html" data-nav="profile">Profile</a>
+          <a href="/student/ai-assistant.html" data-nav="ai-assistant">AI Assistant</a>
+          <button type="button" data-action="logout">Logout</button>
+        </nav>
+      </aside>
+
+      <main class="portal-content">
+        <div class="page-topbar">
+          <h1 class="page-title">AI Study Assistant</h1>
+          <p class="page-subtitle">Open chat for study support and clear history anytime.</p>
+        </div>
+
+        <section class="content-card">
+          <div class="toolbar">
+            <button class="btn btn-primary btn-sm" type="button" id="openChatBtn">Open Chat</button>
+            <button class="btn btn-outline btn-sm" type="button" id="clearChatBtn">Clear History</button>
+          </div>
+
+          <div id="chatPlaceholder">
+            <p>Click "Open Chat" to start conversation with AI Study Assistant.</p>
+          </div>
+
+          <div id="chatContainer" class="chat-shell hidden">
+            <div id="chatLog" class="chat-log"></div>
+            <div class="chat-controls">
+              <textarea id="chatInput" rows="3" placeholder="Ask about courses, study plans, interviews, or skills..."></textarea>
+              <div>
+                <button class="btn btn-primary btn-sm" type="button" id="sendChatBtn">Send</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/student-portal-common.js"></script>
+  <script src="/js/student-ai-assistant-page.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,126 @@
+/* ============================================
+   DISABLE ALL ANIMATIONS FOR PERFORMANCE
+   Global animation disabling for faster site
+   ============================================ */
+
+/* Disable all animations, transitions, and transforms globally */
+*, *::before, *::after {
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  animation-iteration-count: 1 !important;
+  animation-fill-mode: forwards !important;
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+  transform: none !important;
+}
+
+/* Disable specific animation classes */
+.animate-fade-in,
+.animate-fade-out,
+.animate-fade-down,
+.animate-fade-up,
+.animate-fade-left,
+.animate-fade-right,
+.animate-bounce-in,
+.animate-bounce-out,
+.animate-slide-in,
+.animate-slide-out,
+.animate-zoom-in,
+.animate-zoom-out,
+.animate-rotate,
+.animate-pulse,
+.animate-heartbeat,
+.animate-glow,
+.animate-pink-pulse {
+  animation: none !important;
+  transform: none !important;
+}
+
+/* Disable stagger delays */
+.stagger-1,
+.stagger-2,
+.stagger-3,
+.stagger-4,
+.stagger-5 {
+  animation-delay: 0s !important;
+}
+
+/* Disable hover transforms */
+*:hover {
+  transform: none !important;
+}
+
+/* Disable gradient animations */
+.gradient-bg,
+.gradient-text,
+.text-gradient-pink,
+.text-gradient-blue,
+.text-gradient-green {
+  background-attachment: scroll !important;
+}
+
+/* Disable loading animations */
+.loading,
+.spinner,
+.staff-loading,
+.company-loading,
+.student-loading {
+  animation: none !important;
+}
+
+/* Disable keyframe animations */
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes fadeOut { to { opacity: 0; } }
+@keyframes bounceIn { to { transform: scale(1); } }
+@keyframes slideIn { to { transform: translateX(0); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { to { opacity: 1; } }
+@keyframes heartbeat { to { transform: scale(1); } }
+@keyframes glow { to { box-shadow: none; } }
+
+/* Override any remaining animation properties */
+.card:hover,
+.btn:hover,
+.stat-card:hover,
+.opportunity-card:hover,
+.student-card:hover,
+.staff-student-card:hover,
+.company-card:hover,
+.job-card:hover,
+.course-card:hover,
+.internship-card:hover {
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Disable smooth scrolling */
+html {
+  scroll-behavior: auto !important;
+}
+
+/* Disable CSS transforms on buttons */
+button:hover,
+.btn:hover,
+a:hover {
+  transform: none !important;
+}
+
+/* Disable any remaining motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Force static positioning for performance */
+.animate-bounce-in,
+.animate-fade-in,
+.animate-slide-in {
+  position: static !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}

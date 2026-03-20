@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "name": "Boopathi",
+    "email": "boopathipit2022@jkkn.ac.in",
+    "password": "$2b$10$vnZB4CJLksEnihcTf7ximOWCwlRhm1e1l29s/DIQvr56yrd0FR6N6",
+    "role": "staff",
+    "collegeCode": "7313",
+    "createdAt": "2026-02-11 16:18:09"
+  },
+  {
+    "id": 2,
+    "name": "Bharani Senthilkumar",
+    "email": "bharanisit2022@jkkn.ac.in",
+    "password": "$2b$10$Yn4OovyW75UYLhjlrJOkV.uZSZI3p/WWkCmnWBf1508E.ErrlrPmG",
+    "role": "staff",
+    "collegeCode": "7313",
+    "createdAt": "2026-02-12 04:12:53"
+  },
+  {
+    "id": 3,
+    "name": "Tamilselvan",
+    "email": "tamilselvankit2022@jkkn.ac.in",
+    "password": "$2b$10$v/kKSXZuvIFqK0hp9QA8UePzmEFbAVJK41pkC1ffBlvw.3kGOGVvi",
+    "role": "student",
+    "collegeCode": "7313",
+    "createdAt": "2026-02-12 04:14:30"
+  },
+  {
+    "id": 4,
+    "name": "Kanishka ",
+    "email": "kanishkakit2022@jkkn.ac.in",
+    "password": "$2b$10$3UiXQabc0IhxdXvc2cJep.S3gMytEoLI3qHNhANs7.UVBHhCi5Ka2",
+    "role": "student",
+    "collegeCode": "7313",
+    "createdAt": "2026-02-12 04:28:40"
+  },
+  {
+    "id": 5,
+    "name": "MadhuMitha R",
+    "email": "madhumitarit2022@jkkn.ac.in",
+    "password": "$2b$10$TTzgkgjo8K/CZjm3YxgdNedmRTDwvW8Sw8LzsHpGx8ge.3PZ3P4ES",
+    "role": "student",
+    "collegeCode": "7313",
+    "createdAt": "2026-02-12 04:44:02"
+  },
+  {
+    "id": 6,
+    "name": "Kaviya V",
+    "email": "kaviyavit2022@jkkn.ac.in",
+    "password": "$2b$10$b8/I6xwwJdfeA8WiwFhzOOGY4mjWYM0TgUR/ki4.CeknBCipqXJiq",
+    "role": "student",
+    "collegeCode": "7313",
+    "createdAt": "2026-02-12 04:44:57"
+  },
+  {
+    "id": 7,
+    "name": "Sathiyapriya K",
+    "email": "sathiyapriyakit2022@jkkn.ac.in",
+    "password": "$2b$10$Q4JyOf3MkUYqkqL07kLrtutmn9k9/Zl3Vlmexp1a9mqDPJ9ObxPCi",
+    "role": "student",
+    "collegeCode": "7313",
+    "createdAt": "2026-02-12 04:46:14"
+  },
+  {
+    "id": 8,
+    "name": "Bharathi M",
+    "email": "bharathimit2022@jkkn.ac.in",
+    "password": "$2b$10$BVs7VhlGjR.9xB6jxdcpCui/0Hs8IpTgJzM10Cgy86HHWTQr4wk2e",
+    "role": "student",
+    "collegeCode": "7313",
+    "createdAt": "2026-02-12 04:46:52"
+  },
+  {
+    "id": 9,
+    "name": "Gayathri PM",
+    "email": "gayathripmit2022@jkkn.ac.in",
+    "password": "$2b$10$bVAQFuChJShWStUtoI.pgu45ecf3qm0rxqbbGwb16/UsQFot8R.Wu",
+    "role": "student",
+    "collegeCode": "7313",
+    "createdAt": "2026-02-12 04:47:58"
+  },
+  {
+    "id": 10,
+    "name": "Subash R ",
+    "email": "subashrit2022@jkkn.ac.in",
+    "password": "$2b$10$/SqDMne9VeKutQID6XwJ5.d1MFbaANjlSYdmH8dThicae3gNNTuQa",
+    "role": "student",
+    "collegeCode": "7313",
+    "createdAt": "2026-02-12 04:49:20"
+  },
+  {
+    "id": 11,
+    "name": "Kathirvel",
+    "email": "startech@gamil.com",
+    "password": "$2b$10$TCVJWnh6GtD4Jq6LM5XNKuRMPJK519N1nXbHbA4FadTfX1.PR9xuC",
+    "role": "company",
+    "collegeCode": "",
+    "createdAt": "2026-02-12 05:20:51"
+  },
+  {
+    "id": 12,
+    "name": "Niru",
+    "email": "nirutech@gamil.com",
+    "password": "$2b$10$EgmcJctlaQ/a6p4X5nZTjeP11W46k9KLleBMKiuZZjRemC6.VUNO6",
+    "role": "company",
+    "collegeCode": "",
+    "createdAt": "2026-02-12 06:26:05"
+  },
+  {
+    "id": 13,
+    "name": "Jane Staff",
+    "email": "staff@college.edu",
+    "password": "$2b$10$.xDmBbb2J3rpuu27.67cpeY6WT/IbXMiz7ZHuizOyFZkCui852chm",
+    "role": "staff",
+    "collegeCode": "COLLEGE001",
+    "createdAt": "2026-02-12 13:06:11"
+  },
+  {
+    "id": 14,
+    "name": "John Student",
+    "email": "student@college.edu",
+    "password": "$2b$10$B0.c/P7b4I5aLSzXajTb8u9BnP97CVJ5pBS/OuF9uFvK0pThZN4BG",
+    "role": "student",
+    "collegeCode": "COLLEGE001",
+    "createdAt": "2026-02-12 13:06:11"
+  },
+  {
+    "id": 15,
+    "name": "Tech Corp Admin",
+    "email": "company@techcorp.com",
+    "password": "$2b$10$uMERz2Fy0evyRgQdVhf9L.3UhELji3IQRTcMTEwFfWA3j8rQMnw8a",
+    "role": "company",
+    "collegeCode": null,
+    "createdAt": "2026-02-12 13:06:11"
+  },
+  {
+    "id": 16,
+    "name": "Sarah Student",
+    "email": "sarah@college.edu",
+    "password": "$2b$10$O0ignqxlOobq0aEkmRPlQ.kIGEFtZhfaP5wnddNHrZc/VscsRuVZ.",
+    "role": "student",
+    "collegeCode": "COLLEGE001",
+    "createdAt": "2026-02-12 13:06:11"
+  },
+  {
+    "id": 17,
+    "name": "Coaching Centre",
+    "email": "coaching@skills.com",
+    "password": "$2b$10$faJf4HiTxwgNdW0tqmZ4y.yee/Di7exM.bE0xaNvHbCo1bKHv3Yl6",
+    "role": "company",
+    "collegeCode": null,
+    "createdAt": "2026-02-12 13:06:11"
+  },
+  {
+    "id": 18,
+    "name": "Boopathi",
+    "email": "1@gmail.com",
+    "password": "$2b$10$P/Jgq9Nkwu9sVLo/dV2faOQWNHKV6lBpeGTEwUbE3rSUrJNtPJv7a",
+    "role": "company",
+    "collegeCode": "",
+    "createdAt": "2026-02-16 04:43:29"
+  },
+  {
+    "id": 19,
+    "name": "Niranjan N",
+    "email": "niranjan@gmail.com",
+    "password": "$2b$10$4FQf4.u76UdLCiYa4wtmvOXGyNcE3YITCascOTzGr1Wez/DFk.TiW",
+    "role": "student",
+    "collegeCode": "7313",
+    "createdAt": "2026-02-16 16:37:10"
+  },
+  {
+    "id": 20,
+    "name": "Boopathi P",
+    "email": "boopathibio143@gmail.com",
+    "password": "$2b$10$wyrXBd8d/A1p9ZZTLwdIi.3Dqg9IKBmO0eDvXGLXokosctizHjwga",
+    "role": "staff",
+    "collegeCode": "7313",
+    "createdAt": "2026-03-15 02:28:39"
+  }
+]

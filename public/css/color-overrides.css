@@ -1,0 +1,250 @@
+/* ============================================
+   COLOR OVERRIDES - NO BLACK COLORS
+   Replace all black colors with attractive alternatives
+   ============================================ */
+
+/* Text colors - more specific selectors */
+body {
+  color: var(--slate-600);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--slate-800);
+}
+
+/* Labels */
+label {
+  color: var(--slate-700);
+}
+
+/* Links */
+a {
+  color: var(--indigo-600);
+}
+
+a:hover {
+  color: var(--indigo-700);
+}
+
+/* Input text */
+input, textarea, select {
+  color: var(--slate-700);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--slate-400);
+}
+
+/* Table text */
+th {
+  color: var(--slate-700);
+}
+
+td {
+  color: var(--slate-600);
+}
+
+/* Button text overrides */
+.btn-outline {
+  color: var(--indigo-600);
+}
+
+/* Card header text */
+.card-header h3 {
+  color: var(--slate-800);
+}
+
+/* Navbar text */
+.navbar h1 {
+  background: var(--gradient-ocean);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navbar-subtitle {
+  color: var(--slate-500);
+}
+
+/* User info text */
+.user-info {
+  color: var(--slate-600);
+}
+
+/* Profile text */
+.profile-info h4 {
+  background: var(--gradient-ocean);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.detail-item label {
+  color: var(--slate-600);
+}
+
+.detail-item span {
+  color: var(--slate-700);
+}
+
+/* Modal text */
+.modal-header h3 {
+  background: var(--gradient-ocean);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Empty state text */
+.empty-state h3 {
+  color: var(--slate-700);
+}
+
+.empty-state p {
+  color: var(--slate-500);
+}
+
+/* Form group text */
+.form-group small {
+  color: var(--slate-500);
+}
+
+/* Meta text */
+.meta-item {
+  color: var(--slate-500);
+}
+
+.text-muted {
+  color: var(--slate-500);
+}
+
+/* Opportunity card text */
+.opportunity-card h4 {
+  background: var(--gradient-ocean);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.opportunity-card .description {
+  color: var(--slate-600);
+}
+
+/* Student card text */
+.student-card .info-item strong {
+  color: var(--slate-700);
+}
+
+.student-card .info-item span {
+  color: var(--slate-600);
+}
+
+/* Department title */
+.department-title {
+  color: var(--slate-800);
+}
+
+/* Page header text */
+.page-header h2 {
+  background: var(--gradient-ocean);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-header p {
+  color: var(--slate-500);
+}
+
+/* Toast message text */
+.toast-message {
+  color: var(--slate-700);
+}
+
+/* Chat message text */
+.message-content {
+  color: var(--slate-700);
+}
+
+.user-message .message-content {
+  color: white;
+}
+
+/* Quick question text */
+.quick-question-label {
+  color: var(--slate-500);
+}
+
+.quick-question-btn {
+  color: var(--slate-600);
+}
+
+/* Tab button text */
+.tab-button {
+  color: var(--slate-500);
+}
+
+.tab-button.active {
+  color: var(--indigo-600);
+}
+
+/* Progress text */
+.progress-value {
+  background: var(--gradient-ocean);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Stat text */
+.stat-mini-value {
+  background: var(--gradient-ocean);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-mini-label {
+  color: var(--slate-500);
+}
+
+/* Course card text */
+.course-card h5 {
+  color: var(--slate-800);
+}
+
+.course-card .course-meta span {
+  color: var(--slate-500);
+}
+
+/* Module card text */
+.module-card h5 {
+  color: var(--slate-800);
+}
+
+/* Practice card text */
+.practice-card h5 {
+  color: var(--slate-800);
+}
+
+/* Session log text */
+.session-log {
+  color: var(--slate-700);
+}
+
+/* Alert text */
+.alert {
+  color: var(--slate-700);
+}
+
+.alert strong {
+  color: var(--slate-800);
+}
+
+/* Ensure gradient text works properly */
+.stat-value,
+.stat-mini-value,
+.progress-value {
+  color: transparent;
+}

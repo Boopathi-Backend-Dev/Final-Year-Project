@@ -1,0 +1,944 @@
+/* ============================================
+   LIGHT THEME - CLEAN & MODERN
+   Beautiful light backgrounds for all pages
+   ============================================ */
+
+/* Light Theme Color Palette */
+:root {
+  /* Light Backgrounds */
+  --bg-light-primary: #faf7f2;
+  --bg-light-secondary: #f3ece4;
+  --bg-light-tertiary: #e5d8c9;
+  --bg-light-card: #fffdf9;
+  --bg-light-card-hover: #f9f2e9;
+  
+  /* Light Gradients */
+  --gradient-light-bg: linear-gradient(135deg, #faf7f2 0%, #efe3d4 100%);
+  --gradient-light-card: linear-gradient(135deg, #fffdf9 0%, #f9f2e9 100%);
+  --gradient-light-header: linear-gradient(135deg, #f3ece4 0%, #e5d8c9 100%);
+  
+  /* Light Text Colors */
+  --text-light-primary: #3b2f2a;
+  --text-light-secondary: #5b4a3f;
+  --text-light-muted: #7a665a;
+  --text-light-accent: #c17a42;
+  
+  /* Light Shadows */
+  --shadow-light-sm: 0 1px 2px 0 rgba(75, 54, 38, 0.06);
+  --shadow-light: 0 4px 6px -1px rgba(75, 54, 38, 0.12);
+  --shadow-light-md: 0 10px 15px -3px rgba(75, 54, 38, 0.14);
+  --shadow-light-lg: 0 20px 25px -5px rgba(75, 54, 38, 0.18);
+  
+  /* Light Borders */
+  --border-light: rgba(229, 216, 201, 0.8);
+  --border-light-hover: rgba(211, 193, 170, 0.85);
+}
+
+/* Disable all animations for performance */
+*, *::before, *::after {
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+}
+
+/* Override body background for light theme */
+body.light-theme {
+  background: var(--bg-light-primary);
+  color: var(--text-light-primary);
+  min-height: 100vh;
+}
+
+/* Light Theme Navbar */
+.navbar.light-theme,
+.staff-navbar.light-theme {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light);
+}
+
+.navbar.light-theme h1,
+.staff-navbar.light-theme h1 {
+  color: var(--text-light-primary);
+}
+
+.navbar.light-theme .navbar-subtitle,
+.staff-navbar.light-theme .staff-navbar-subtitle {
+  color: var(--text-light-muted);
+}
+
+.navbar.light-theme .user-info,
+.staff-navbar.light-theme .staff-user-info {
+  color: var(--text-light-secondary);
+}
+
+/* Light Theme Cards */
+.card.light-theme,
+.staff-card.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light);
+  color: var(--text-light-primary);
+}
+
+.card.light-theme:hover,
+.staff-card.light-theme:hover {
+  background: var(--bg-light-card-hover);
+  border-color: var(--border-light-hover);
+  box-shadow: var(--shadow-light-md);
+}
+
+.card.light-theme .card-header,
+.staff-card.light-theme .staff-card-header {
+  background: var(--gradient-light-header);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.card.light-theme .card-header h3,
+.staff-card.light-theme .staff-card-header h3 {
+  color: var(--text-light-primary);
+}
+
+/* Light Theme Stat Cards */
+.stat-card.light-theme,
+.staff-stat-card.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light);
+  color: var(--text-light-primary);
+}
+
+.stat-card.light-theme:hover,
+.staff-stat-card.light-theme:hover {
+  box-shadow: var(--shadow-light-lg);
+  border-color: var(--border-light-hover);
+}
+
+.stat-card.light-theme .stat-value,
+.staff-stat-card.light-theme .staff-stat-value {
+  color: var(--text-light-primary);
+}
+
+.stat-card.light-theme h4,
+.staff-stat-card.light-theme .staff-stat-title {
+  color: var(--text-light-muted);
+}
+
+/* Light Theme Student Cards */
+.student-card.light-theme,
+.staff-student-card.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light);
+}
+
+.student-card.light-theme:hover,
+.staff-student-card.light-theme:hover {
+  box-shadow: var(--shadow-light-lg);
+  border-color: var(--border-light-hover);
+}
+
+.student-card.light-theme .card-body,
+.staff-student-card.light-theme .staff-student-body {
+  color: var(--text-light-primary);
+}
+
+/* Light Theme Opportunity Cards */
+.opportunity-card.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light);
+  color: var(--text-light-primary);
+}
+
+.opportunity-card.light-theme:hover {
+  box-shadow: var(--shadow-light-lg);
+  border-color: var(--border-light-hover);
+}
+
+.opportunity-card.light-theme h4 {
+  color: var(--text-light-primary);
+}
+
+.opportunity-card.light-theme .description {
+  color: var(--text-light-secondary);
+}
+
+/* Light Theme Forms */
+.form-group.light-theme input,
+.form-group.light-theme select,
+.form-group.light-theme textarea,
+.staff-form-control.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-light-primary);
+}
+
+.form-group.light-theme input:focus,
+.form-group.light-theme select:focus,
+.form-group.light-theme textarea:focus,
+.staff-form-control.light-theme:focus {
+  border-color: var(--text-light-accent);
+  box-shadow: 0 0 0 3px rgba(193, 122, 66, 0.12);
+}
+
+.form-group.light-theme label,
+.staff-form-label.light-theme {
+  color: var(--text-light-secondary);
+}
+
+.form-group.light-theme input::placeholder,
+.form-group.light-theme textarea::placeholder,
+.staff-form-control.light-theme::placeholder {
+  color: var(--text-light-muted);
+}
+
+/* Light Theme Buttons */
+.btn.light-theme {
+  box-shadow: var(--shadow-light-sm);
+}
+
+.btn.light-theme:hover {
+  box-shadow: var(--shadow-light);
+}
+
+.btn-outline.light-theme {
+  background: var(--bg-light-card);
+  color: var(--text-light-accent);
+  border: 1px solid var(--border-light);
+}
+
+.btn-outline.light-theme:hover {
+  background: var(--bg-light-secondary);
+  border-color: var(--border-light-hover);
+}
+
+/* Light Theme Modals */
+.modal.light-theme {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+.modal.light-theme .modal-content {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light-lg);
+  color: var(--text-light-primary);
+}
+
+.modal.light-theme .modal-header {
+  background: var(--gradient-light-header);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.modal.light-theme .modal-header h3 {
+  color: var(--text-light-primary);
+}
+
+/* Light Theme Tables */
+.table-container.light-theme table {
+  background: var(--bg-light-card);
+}
+
+.table-container.light-theme thead {
+  background: var(--gradient-light-header);
+}
+
+.table-container.light-theme th {
+  color: var(--text-light-primary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.table-container.light-theme td {
+  color: var(--text-light-secondary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.table-container.light-theme tbody tr:hover {
+  background: var(--bg-light-secondary);
+}
+
+/* Light Theme Badges */
+.badge.light-theme {
+  border: 1px solid var(--border-light);
+}
+
+.badge-success.light-theme {
+  background: rgba(16, 185, 129, 0.1);
+  color: #047857;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.badge-warning.light-theme {
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.badge-danger.light-theme {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.badge-primary.light-theme {
+  background: rgba(193, 122, 66, 0.12);
+  color: #1d4ed8;
+  border-color: rgba(193, 122, 66, 0.3);
+}
+
+/* Light Theme Empty States */
+.empty-state.light-theme,
+.staff-empty-state.light-theme {
+  color: var(--text-light-muted);
+}
+
+.empty-state.light-theme h3,
+.staff-empty-state.light-theme .staff-empty-title {
+  color: var(--text-light-secondary);
+}
+
+/* Light Theme Page Headers */
+.page-header.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light);
+}
+
+.page-header.light-theme h2 {
+  color: var(--text-light-primary);
+}
+
+.page-header.light-theme p {
+  color: var(--text-light-secondary);
+}
+
+/* Light Theme Profile Cards */
+.profile-card.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light);
+}
+
+.detail-item.light-theme {
+  background: var(--bg-light-secondary);
+  border-left: 3px solid var(--text-light-accent);
+}
+
+.detail-item.light-theme label {
+  color: var(--text-light-muted);
+}
+
+.detail-item.light-theme span {
+  color: var(--text-light-primary);
+}
+
+/* Light Theme Chat Interface */
+.ai-chat-interface.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+}
+
+.ai-chat-interface.light-theme .chat-messages {
+  background: var(--bg-light-secondary);
+}
+
+.ai-chat-interface.light-theme .message-content {
+  background: var(--bg-light-card);
+  box-shadow: var(--shadow-light-sm);
+  color: var(--text-light-primary);
+}
+
+.ai-chat-interface.light-theme .chat-input-container {
+  background: var(--bg-light-card);
+  border-top: 1px solid var(--border-light);
+}
+
+.ai-chat-interface.light-theme #chatInput {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-light-primary);
+}
+
+/* Light Theme Progress Elements */
+.progress-bar.light-theme {
+  background: var(--bg-light-tertiary);
+}
+
+.stat-mini.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+}
+
+.stat-mini.light-theme .stat-mini-value {
+  color: var(--text-light-primary);
+}
+
+.stat-mini.light-theme .stat-mini-label {
+  color: var(--text-light-muted);
+}
+
+/* Light Theme Filters */
+.staff-filters.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+}
+
+.staff-filter-label.light-theme {
+  color: var(--text-light-secondary);
+}
+
+/* Light Theme Responsive Adjustments */
+@media (max-width: 768px) {
+  body.light-theme {
+    background: var(--bg-light-primary);
+  }
+}
+
+/* Light Theme Scrollbar */
+::-webkit-scrollbar-track {
+  background: var(--bg-light-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-light-hover);
+  border: 2px solid var(--bg-light-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-light-muted);
+}
+
+/* Light Theme Selection */
+::selection {
+  background: rgba(193, 122, 66, 0.2);
+  color: var(--text-light-primary);
+}
+/* ============================================
+   ENHANCED LIGHT THEME - INTERNAL AREAS
+   Complete light styling for all internal components
+   ============================================ */
+
+/* Staff Dashboard Internal Components */
+.staff-card.light-theme .staff-card-body {
+  background: var(--bg-light-card);
+  color: var(--text-light-primary);
+}
+
+.staff-student-card.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light);
+}
+
+.staff-student-card.light-theme .staff-student-header {
+  background: var(--gradient-primary);
+  color: white;
+}
+
+.staff-student-card.light-theme .staff-student-body {
+  background: var(--bg-light-card);
+  color: var(--text-light-primary);
+}
+
+.staff-student-card.light-theme .staff-detail-label {
+  color: var(--text-light-muted);
+}
+
+.staff-student-card.light-theme .staff-detail-value {
+  color: var(--text-light-primary);
+}
+
+.staff-student-card.light-theme .staff-student-actions {
+  border-top: 1px solid var(--border-light);
+}
+
+/* Student Dashboard Internal Components */
+.card.light-theme .card-body {
+  background: var(--bg-light-card);
+  color: var(--text-light-primary);
+}
+
+.profile-card.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light);
+}
+
+.profile-card.light-theme .profile-header {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.profile-card.light-theme .profile-info h4 {
+  color: var(--text-light-primary);
+}
+
+.profile-card.light-theme .text-muted {
+  color: var(--text-light-muted);
+}
+
+.detail-item.light-theme {
+  background: var(--bg-light-secondary);
+  border: 1px solid var(--border-light);
+  border-left: 3px solid var(--text-light-accent);
+}
+
+.detail-item.light-theme:hover {
+  background: var(--bg-light-tertiary);
+  border-color: var(--border-light-hover);
+}
+
+.detail-item.light-theme label {
+  color: var(--text-light-muted);
+}
+
+.detail-item.light-theme span {
+  color: var(--text-light-primary);
+}
+
+/* Extra Courses Section */
+.card.light-theme #extraCoursesContainer {
+  background: var(--bg-light-card);
+}
+
+.course-card.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light-sm);
+}
+
+.course-card.light-theme:hover {
+  box-shadow: var(--shadow-light);
+  border-color: var(--border-light-hover);
+}
+
+.course-card.light-theme h5 {
+  color: var(--text-light-primary);
+}
+
+.course-card.light-theme .course-meta span {
+  color: var(--text-light-secondary);
+}
+
+/* Opportunities Section */
+.opportunity-card.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light);
+}
+
+.opportunity-card.light-theme:hover {
+  box-shadow: var(--shadow-light-lg);
+  border-color: var(--border-light-hover);
+}
+
+.opportunity-card.light-theme h4 {
+  color: var(--text-light-primary);
+}
+
+.opportunity-card.light-theme .description {
+  color: var(--text-light-secondary);
+}
+
+.opportunity-card.light-theme .meta-item {
+  color: var(--text-light-muted);
+}
+
+/* Applications Section */
+.card.light-theme #applicationsContainer {
+  background: var(--bg-light-card);
+}
+
+.application-card.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light-sm);
+}
+
+/* AI Chat Interface */
+.ai-chat-interface.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light);
+}
+
+.ai-chat-interface.light-theme .chat-messages {
+  background: var(--bg-light-secondary);
+}
+
+.ai-chat-interface.light-theme .message-content {
+  background: var(--bg-light-card);
+  color: var(--text-light-primary);
+  box-shadow: var(--shadow-light-sm);
+}
+
+.ai-chat-interface.light-theme .user-message .message-content {
+  background: var(--gradient-primary);
+  color: white;
+}
+
+.ai-chat-interface.light-theme .chat-input-container {
+  background: var(--bg-light-card);
+  border-top: 1px solid var(--border-light);
+}
+
+.ai-chat-interface.light-theme #chatInput {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-light-primary);
+}
+
+.ai-chat-interface.light-theme #chatInput:focus {
+  border-color: var(--text-light-accent);
+  box-shadow: 0 0 0 3px rgba(193, 122, 66, 0.12);
+}
+
+.ai-chat-interface.light-theme .quick-question-btn {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-light-secondary);
+}
+
+.ai-chat-interface.light-theme .quick-question-btn:hover {
+  background: var(--gradient-primary);
+  color: white;
+  border-color: transparent;
+}
+
+/* Company Dashboard Internal Components */
+.profile-card.light-theme .profile-details {
+  background: var(--bg-light-card);
+}
+
+.company-logo-container.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+}
+
+/* Form Elements in Light Theme */
+.form-group.light-theme {
+  margin-bottom: 1.5rem;
+}
+
+.form-group.light-theme label {
+  color: var(--text-light-secondary);
+  font-weight: 600;
+}
+
+.form-group.light-theme input,
+.form-group.light-theme select,
+.form-group.light-theme textarea {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-light-primary);
+  border-radius: 8px;
+}
+
+.form-group.light-theme input:focus,
+.form-group.light-theme select:focus,
+.form-group.light-theme textarea:focus {
+  border-color: var(--text-light-accent);
+  box-shadow: 0 0 0 3px rgba(193, 122, 66, 0.12);
+  background: white;
+}
+
+.form-group.light-theme input::placeholder,
+.form-group.light-theme textarea::placeholder {
+  color: var(--text-light-muted);
+}
+
+.form-group.light-theme small {
+  color: var(--text-light-muted);
+}
+
+/* Progress Elements */
+.progress-bar.light-theme {
+  background: var(--bg-light-tertiary);
+  border-radius: 10px;
+}
+
+.progress-fill.light-theme {
+  background: var(--gradient-primary);
+}
+
+.stat-mini.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light-sm);
+}
+
+.stat-mini.light-theme:hover {
+  box-shadow: var(--shadow-light);
+  border-color: var(--border-light-hover);
+}
+
+.stat-mini.light-theme .stat-mini-value {
+  color: var(--text-light-primary);
+}
+
+.stat-mini.light-theme .stat-mini-label {
+  color: var(--text-light-muted);
+}
+
+/* Course Progress Elements */
+.progress-ring.light-theme {
+  box-shadow: var(--shadow-light);
+}
+
+.module-card.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light-sm);
+}
+
+.module-card.light-theme:hover {
+  box-shadow: var(--shadow-light);
+  border-color: var(--border-light-hover);
+}
+
+.module-card.light-theme h5 {
+  color: var(--text-light-primary);
+}
+
+.practice-card.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light-sm);
+  border-top: 3px solid var(--text-light-accent);
+}
+
+.practice-card.light-theme:hover {
+  box-shadow: var(--shadow-light);
+}
+
+.session-log.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  border-left: 3px solid var(--text-light-accent);
+}
+
+.session-log.light-theme:hover {
+  background: var(--bg-light-secondary);
+  border-color: var(--border-light-hover);
+}
+
+/* Tab Navigation */
+.tab-navigation.light-theme {
+  border-bottom: 2px solid var(--border-light);
+}
+
+.tab-button.light-theme {
+  color: var(--text-light-muted);
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-button.light-theme:hover {
+  color: var(--text-light-accent);
+  background: var(--bg-light-secondary);
+}
+
+.tab-button.light-theme.active {
+  color: var(--text-light-accent);
+  border-bottom-color: var(--text-light-accent);
+  background: var(--bg-light-secondary);
+}
+
+/* Time Tracker */
+.time-tracker.light-theme {
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: var(--shadow-light-lg);
+}
+
+/* Attendance Elements */
+.attendance-day.light-theme {
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.attendance-day.light-theme.present {
+  background: var(--gradient-success);
+  color: white;
+  box-shadow: var(--shadow-light-sm);
+}
+
+.attendance-day.light-theme.absent {
+  background: var(--gradient-warning);
+  color: white;
+  box-shadow: var(--shadow-light-sm);
+}
+
+.attendance-day.light-theme.late {
+  background: linear-gradient(135deg, #e6ad3a 0%, #d97706 100%);
+  color: white;
+  box-shadow: var(--shadow-light-sm);
+}
+
+.attendance-day.light-theme.empty {
+  background: var(--bg-light-tertiary);
+  color: var(--text-light-muted);
+}
+
+/* Student Grid in Staff Dashboard */
+.staff-students-grid.light-theme {
+  gap: 1.5rem;
+}
+
+.staff-students-grid.light-theme .staff-student-card {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light);
+}
+
+/* Filter Dropdowns */
+.staff-filters.light-theme select,
+.staff-form-control.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-light-primary);
+}
+
+.staff-filters.light-theme select:focus,
+.staff-form-control.light-theme:focus {
+  border-color: var(--text-light-accent);
+  box-shadow: 0 0 0 3px rgba(193, 122, 66, 0.12);
+}
+
+/* Course Selection */
+.course-selector.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light);
+}
+
+.course-selector.light-theme h3 {
+  color: var(--text-light-primary);
+}
+
+/* Management Container */
+.management-container.light-theme {
+  background: var(--gradient-light-bg);
+}
+
+/* Student Profile Modal Content */
+.student-profile-container.light-theme {
+  background: var(--bg-light-card);
+  color: var(--text-light-primary);
+}
+
+.profile-section.light-theme {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.profile-section.light-theme h4 {
+  color: var(--text-light-accent);
+}
+
+.profile-item.light-theme label {
+  color: var(--text-light-muted);
+}
+
+.profile-item.light-theme span {
+  color: var(--text-light-primary);
+}
+
+.skills-container.light-theme .skill-tag {
+  background: var(--text-light-accent);
+  color: white;
+}
+
+/* Company Profile Preview */
+.profile-preview.light-theme {
+  background: var(--bg-light-secondary);
+  border: 1px solid var(--border-light);
+}
+
+.preview-item.light-theme label {
+  color: var(--text-light-muted);
+}
+
+/* Alert Messages */
+.alert.light-theme {
+  background: var(--bg-light-secondary);
+  border: 1px solid var(--border-light);
+  color: var(--text-light-primary);
+}
+
+.alert-warning.light-theme {
+  background: rgba(245, 158, 11, 0.1);
+  border-left: 4px solid var(--warning);
+  color: var(--text-light-primary);
+}
+
+.alert.light-theme strong {
+  color: var(--text-light-primary);
+}
+
+/* Loading States */
+.staff-loading.light-theme {
+  border: 2px solid var(--border-light);
+  border-top-color: var(--text-light-accent);
+}
+
+/* Submission Forms */
+.submission-form.light-theme {
+  background: var(--bg-light-secondary);
+  border: 1px solid var(--border-light);
+}
+
+/* Course Header */
+.course-header.light-theme {
+  background: var(--bg-light-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light);
+}
+
+.course-header.light-theme h2 {
+  color: var(--text-light-primary);
+}
+
+.course-header.light-theme .text-muted {
+  color: var(--text-light-muted);
+}
+
+/* Enhanced Hover States for Light Theme */
+.card.light-theme:hover,
+.staff-card.light-theme:hover,
+.opportunity-card.light-theme:hover,
+.student-card.light-theme:hover,
+.staff-student-card.light-theme:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light-lg);
+  border-color: var(--border-light-hover);
+}
+
+/* Text Selection in Light Theme */
+.light-theme ::selection {
+  background: rgba(193, 122, 66, 0.2);
+  color: var(--text-light-primary);
+}
+
+/* Scrollbar for Light Theme */
+.light-theme ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.light-theme ::-webkit-scrollbar-track {
+  background: var(--bg-light-secondary);
+  border-radius: 4px;
+}
+
+.light-theme ::-webkit-scrollbar-thumb {
+  background: var(--border-light-hover);
+  border-radius: 4px;
+  border: 1px solid var(--bg-light-secondary);
+}
+
+.light-theme ::-webkit-scrollbar-thumb:hover {
+  background: var(--text-light-muted);
+}
+

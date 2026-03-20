@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opportunities</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/student-portal-shell.css">
+</head>
+<body class="student-portal-page" data-page="opportunities">
+  <div class="portal-shell">
+    <header class="portal-header">
+      <div class="portal-header-left">
+        <div class="portal-logo">CC</div>
+        <div class="portal-title">Student Portal</div>
+      </div>
+      <div class="portal-header-right">
+        <div class="portal-user">Signed in as <strong data-student-name>Student</strong></div>
+        <button class="btn btn-outline btn-sm" type="button" data-action="logout">Logout</button>
+      </div>
+    </header>
+
+    <div class="portal-main">
+      <aside class="portal-sidebar">
+        <nav class="portal-nav">
+          <a href="/student/dashboard.html" data-nav="dashboard">Dashboard</a>
+          <a href="/student/applications.html" data-nav="applications">Applications</a>
+          <a href="/student/opportunities.html" data-nav="opportunities">Opportunities</a>
+          <a href="/student/extra-courses.html" data-nav="extra-courses">Extra Courses</a>
+          <a href="/student/wishlist.html" data-nav="wishlist">Wishlist</a>
+          <a href="/student/attendance.html" data-nav="attendance">Attendance</a>
+          <a href="/student/notifications.html" data-nav="notifications">Notifications</a>
+          <a href="/student/queries.html" data-nav="queries">Queries</a>
+          <a href="/student/profile.html" data-nav="profile">Profile</a>
+          <a href="/student/ai-assistant.html" data-nav="ai-assistant">AI Assistant</a>
+          <button type="button" data-action="logout">Logout</button>
+        </nav>
+      </aside>
+
+      <main class="portal-content">
+        <div class="page-topbar">
+          <h1 class="page-title">Opportunities</h1>
+          <p class="page-subtitle">Load jobs and courses and filter by type, category, and department.</p>
+        </div>
+
+        <section class="content-card">
+          <div class="toolbar">
+            <button class="btn btn-primary btn-sm" type="button" id="loadJobsBtn">Load Jobs</button>
+            <button class="btn btn-secondary btn-sm" type="button" id="loadCoursesBtn">Load Courses</button>
+            <button class="btn btn-info btn-sm" type="button" id="loadInternshipsBtn">Load Internships</button>
+            <button class="btn btn-outline btn-sm" type="button" id="refreshOpportunitiesBtn">Refresh</button>
+          </div>
+
+          <div class="toolbar">
+            <div class="form-group">
+              <label for="filterType">Type</label>
+              <select id="filterType">
+                <option value="job">Job</option>
+                <option value="course">Course</option>
+                <option value="internship">Internship</option>
+              </select>
+            </div>
+            <div class="form-group filter-course-only">
+              <label for="filterCategory">Category</label>
+              <select id="filterCategory">
+                <option value="">All</option>
+                <option value="Technical">Technical</option>
+                <option value="VAC">VAC</option>
+                <option value="Skill">Skill</option>
+                <option value="Mandatory">Mandatory</option>
+                <option value="Soft Skills">Soft Skills</option>
+                <option value="Language">Language</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="filterDepartment">Department</label>
+              <select id="filterDepartment">
+                <option value="">All</option>
+                <option value="CSE">CSE</option>
+                <option value="ECE">ECE</option>
+                <option value="MECH">MECH</option>
+                <option value="CIVIL">CIVIL</option>
+                <option value="EEE">EEE</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="filterSearch">Search</label>
+              <input id="filterSearch" type="text" placeholder="title, company, skills">
+            </div>
+          </div>
+
+          <div class="toolbar">
+            <div class="form-group">
+              <label for="filterSort">Sort</label>
+              <select id="filterSort"></select>
+            </div>
+            <div class="form-group filter-course-only">
+              <label for="filterPlatform">Platform</label>
+              <select id="filterPlatform">
+                <option value="">All</option>
+                <option value="Coursera">Coursera</option>
+                <option value="Udemy">Udemy</option>
+                <option value="NPTEL">NPTEL</option>
+                <option value="edX">edX</option>
+                <option value="LinkedIn Learning">LinkedIn Learning</option>
+              </select>
+            </div>
+            <div class="form-group filter-course-only">
+              <label for="filterFeesMin">Fees Min</label>
+              <input id="filterFeesMin" type="number" min="0" placeholder="0">
+            </div>
+            <div class="form-group filter-course-only">
+              <label for="filterFeesMax">Fees Max</label>
+              <input id="filterFeesMax" type="number" min="0" placeholder="500">
+            </div>
+            <button class="btn btn-outline btn-sm" type="button" id="clearFiltersBtn">Clear Filters</button>
+          </div>
+        </section>
+
+        <section class="content-card">
+          <div class="card-header-row">
+            <div>
+              <h3>Saved Searches</h3>
+              <p class="card-subtitle">Save filter presets and get notified when matches appear.</p>
+            </div>
+          </div>
+          <div class="toolbar">
+            <div class="form-group grow">
+              <label for="savedSearchName">Search Name</label>
+              <input id="savedSearchName" type="text" placeholder="e.g., CSE internships">
+            </div>
+            <button class="btn btn-primary btn-sm" type="button" id="saveSearchBtn">Save Current Search</button>
+          </div>
+          <div id="savedSearchList" class="saved-search-list"></div>
+        </section>
+
+        <section class="content-card">
+          <h3 id="opportunitySectionTitle">Loaded Opportunities</h3>
+          <div id="opportunitiesContainer"></div>
+          <div class="opportunity-meta" id="opportunityMeta"></div>
+          <div class="pagination hidden" id="opportunitiesPagination">
+            <button type="button" id="prevPageBtn">Previous</button>
+            <span id="paginationLabel"></span>
+            <button type="button" id="nextPageBtn">Next</button>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/student-portal-common.js"></script>
+  <script src="/js/student-opportunities-page.js"></script>
+</body>
+</html>
+

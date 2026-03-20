@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Approvals - Staff</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/staff-portal-shell.css">
+</head>
+<body class="staff-portal-page" data-page="approvals">
+  <div class="portal-shell">
+    <header class="portal-header">
+      <div class="portal-header-left">
+        <div class="portal-logo">CC</div>
+        <div class="portal-title">Staff Portal</div>
+      </div>
+      <div class="portal-header-right">
+        <div class="portal-user">Signed in as <strong data-staff-name>Staff</strong></div>
+        <button class="btn btn-outline btn-sm" type="button" data-action="logout">Logout</button>
+      </div>
+    </header>
+
+    <div class="portal-main">
+      <aside class="portal-sidebar">
+        <nav class="portal-nav">
+          <a href="/staff/dashboard.html" data-nav="dashboard">Dashboard</a>
+          <a href="/staff/students.html" data-nav="students">Students</a>
+          <a href="/staff/applications.html" data-nav="applications">Applications</a>
+          <a href="/staff/opportunities.html" data-nav="opportunities">Opportunities</a>
+          <a href="/staff/attendance.html" data-nav="attendance">Attendance</a>
+          <a href="/staff/analytics.html" data-nav="analytics">Analytics</a>
+          <a href="/staff/queries.html" data-nav="queries">Queries</a>
+          <a href="/staff/approvals.html" data-nav="approvals">Approvals</a>
+          <a href="/staff/profile.html" data-nav="profile">Profile</a>
+          <button type="button" data-action="logout">Logout</button>
+        </nav>
+      </aside>
+
+      <main class="portal-content">
+        <div class="page-topbar">
+          <h1 class="page-title">Approval Workflow</h1>
+          <p class="page-subtitle">Review and approve opportunities.</p>
+        </div>
+
+        <section class="content-card">
+          <div class="toolbar">
+            <select id="approvalStatusFilter" class="form-control">
+              <option value="review">In Review</option>
+              <option value="draft">Draft</option>
+              <option value="published">Published</option>
+              <option value="rejected">Rejected</option>
+              <option value="all">All</option>
+            </select>
+            <select id="approvalTypeFilter" class="form-control">
+              <option value="all">All Types</option>
+              <option value="job">Job</option>
+              <option value="course">Course</option>
+              <option value="internship">Internship</option>
+            </select>
+            <button class="btn btn-primary btn-sm" id="refreshApprovals">Refresh</button>
+          </div>
+          <div id="approvalQueueContainer">
+            <div class="empty-state">
+              <div class="empty-state-icon">📋</div>
+              <h3>No approvals in this view</h3>
+              <p>Click "Refresh" to load approvals</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/staff-portal-common.js"></script>
+  <script src="/js/staff-approvals-page.js"></script>
+</body>
+</html>
+

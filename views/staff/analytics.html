@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics - Staff</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/staff-portal-shell.css">
+</head>
+<body class="staff-portal-page" data-page="analytics">
+  <div class="portal-shell">
+    <header class="portal-header">
+      <div class="portal-header-left">
+        <div class="portal-logo">CC</div>
+        <div class="portal-title">Staff Portal</div>
+      </div>
+      <div class="portal-header-right">
+        <div class="portal-user">Signed in as <strong data-staff-name>Staff</strong></div>
+        <button class="btn btn-outline btn-sm" type="button" data-action="logout">Logout</button>
+      </div>
+    </header>
+
+    <div class="portal-main">
+      <aside class="portal-sidebar">
+        <nav class="portal-nav">
+          <a href="/staff/dashboard.html" data-nav="dashboard">Dashboard</a>
+          <a href="/staff/students.html" data-nav="students">Students</a>
+          <a href="/staff/applications.html" data-nav="applications">Applications</a>
+          <a href="/staff/opportunities.html" data-nav="opportunities">Opportunities</a>
+          <a href="/staff/attendance.html" data-nav="attendance">Attendance</a>
+          <a href="/staff/analytics.html" data-nav="analytics">Analytics</a>
+          <a href="/staff/queries.html" data-nav="queries">Queries</a>
+          <a href="/staff/approvals.html" data-nav="approvals">Approvals</a>
+          <a href="/staff/profile.html" data-nav="profile">Profile</a>
+          <button type="button" data-action="logout">Logout</button>
+        </nav>
+      </aside>
+
+      <main class="portal-content">
+        <div class="page-topbar">
+          <h1 class="page-title">Analytics Dashboard</h1>
+          <p class="page-subtitle">View insights and trends.</p>
+        </div>
+
+        <section class="content-card">
+          <div class="toolbar">
+            <button class="btn btn-primary btn-sm" id="refreshAnalytics">Refresh</button>
+          </div>
+          <div class="analytics-grid">
+            <div class="content-card">
+              <h3>Top Search Keywords</h3>
+              <div class="chart-wrap">
+                <canvas id="searchKeywordsChart"></canvas>
+                <div class="chart-empty" id="searchKeywordsEmpty">No data available</div>
+              </div>
+              <div id="topSearchesContainer"></div>
+            </div>
+            <div class="content-card">
+              <h3>Popular Courses (Wishlist)</h3>
+              <div class="chart-wrap">
+                <canvas id="popularCoursesChart"></canvas>
+                <div class="chart-empty" id="popularCoursesEmpty">No data available</div>
+              </div>
+              <div id="popularCoursesContainer"></div>
+            </div>
+            <div class="content-card">
+              <h3>Placement Trends</h3>
+              <div class="chart-wrap">
+                <canvas id="placementTrendsChart"></canvas>
+                <div class="chart-empty" id="placementTrendsEmpty">No data available</div>
+              </div>
+              <div id="placementTrendsContainer"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/staff-portal-common.js"></script>
+  <script src="/js/staff-analytics-page.js"></script>
+</body>
+</html>
+

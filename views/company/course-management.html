@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/professional-enhancements.css">
+  <link rel="stylesheet" href="/css/tailwind-enhancements.css">
+  <link rel="stylesheet" href="/css/color-overrides.css">
+  <link rel="stylesheet" href="/css/enhanced-colors.css">
+  <link rel="stylesheet" href="/css/pink-light-colors.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
+  <title>Course Management - Company</title>
+  <style>
+    .management-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .course-selector {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .student-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .student-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.3s ease;
+      border-left: 4px solid var(--primary);
+    }
+
+    .student-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .student-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .student-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .progress-summary {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+
+    .progress-item {
+      text-align: center;
+      padding: 0.75rem;
+      background: rgba(99, 102, 241, 0.05);
+      border-radius: 8px;
+    }
+
+    .progress-item-value {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .progress-item-label {
+      font-size: 0.75rem;
+      color: var(--gray);
+      margin-top: 0.25rem;
+    }
+
+    .module-list {
+      margin-top: 1.5rem;
+    }
+
+    .module-item {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow-soft);
+      border-left: 4px solid var(--info);
+    }
+
+    .module-actions {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body class="light-theme">
+  <div class="navbar light-theme">
+    <div class="navbar-brand">
+      <div class="navbar-logo">📚</div>
+      <div>
+        <h1>Course Management</h1>
+        <div class="navbar-subtitle">Manage Courses & Monitor Students</div>
+      </div>
+    </div>
+    <div class="navbar-actions">
+      <button class="btn btn-outline light-theme btn-sm" onclick="window.location.href='/company/dashboard.html'">← Back to Dashboard</button>
+      <button class="btn btn-outline light-theme btn-sm" onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <div class="management-container">
+    <!-- Course Selection -->
+    <div class="course-selector animate-fade-in">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <h3>📚 Select Course to Manage</h3>
+        <button class="btn btn-primary" onclick="showCreateCourseModal()">+ Create New Course</button>
+      </div>
+      <select id="courseSelect" class="form-control" onchange="loadCourseManagement()">
+        <option value="">-- Select a Course --</option>
+      </select>
+    </div>
+
+    <!-- Course Management Tabs -->
+    <div id="courseManagement" style="display: none;">
+      <!-- Course Info Header -->
+      <div class="card animate-fade-in">
+        <div class="card-header">
+          <div>
+            <h3 id="courseTitle">Course Name</h3>
+            <p class="text-muted" id="courseDescription">Course description</p>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-outline btn-sm" onclick="editCourse()">✏️ Edit Course</button>
+            <button class="btn btn-info btn-sm" onclick="viewCourseDetails()">📊 View Details</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="tab-navigation" style="margin-top: 2rem;">
+        <button class="tab-button active" onclick="switchTab('modules')">📖 Modules</button>
+        <button class="tab-button" onclick="switchTab('practices')">✍️ Practices</button>
+        <button class="tab-button" onclick="switchTab('students')">👥 Students</button>
+        <button class="tab-button" onclick="switchTab('attendance')">📅 Attendance</button>
+      </div>
+
+      <!-- Modules Tab -->
+      <div id="modulesTab" class="tab-content active">
+        <div class="card">
+          <div class="card-header">
+            <h3>📖 Course Modules</h3>
+            <button class="btn btn-primary btn-sm" onclick="showAddModuleModal()">+ Add Module</button>
+          </div>
+          <div class="card-body">
+            <div id="modulesList">
+              <div class="empty-state">
+                <div class="empty-state-icon">📚</div>
+                <h3>No modules added</h3>
+                <p>Add modules to structure your course content</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Practices Tab -->
+      <div id="practicesTab" class="tab-content">
+        <div class="card">
+          <div class="card-header">
+            <h3>✍️ Practices & Assignments</h3>
+            <button class="btn btn-primary btn-sm" onclick="showAddPracticeModal()">+ Add Practice</button>
+          </div>
+          <div class="card-body">
+            <div id="practicesList">
+              <div class="empty-state">
+                <div class="empty-state-icon">📝</div>
+                <h3>No practices added</h3>
+                <p>Create assignments and exercises for students</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Students Tab -->
+      <div id="studentsTab" class="tab-content">
+        <div class="card">
+          <div class="card-header">
+            <h3>👥 Enrolled Students</h3>
+            <button class="btn btn-outline btn-sm" onclick="refreshStudents()">🔄 Refresh</button>
+          </div>
+          <div class="card-body">
+            <div id="studentsList">
+              <div class="empty-state">
+                <div class="empty-state-icon">👥</div>
+                <h3>No students enrolled</h3>
+                <p>Students will appear here once they enroll</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Attendance Tab -->
+      <div id="attendanceTab" class="tab-content">
+        <div class="card">
+          <div class="card-header">
+            <h3>📅 Mark Attendance</h3>
+            <div class="btn-group">
+              <input type="date" id="attendanceDate" class="form-control" style="width: auto;">
+              <button class="btn btn-primary btn-sm" onclick="markBulkAttendance()">✓ Mark All Present</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div id="attendanceList">
+              <div class="empty-state">
+                <div class="empty-state-icon">📅</div>
+                <h3>Select a date to mark attendance</h3>
+                <p>Mark attendance for enrolled students</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create Course Modal -->
+  <div id="createCourseModal" class="modal" style="display: none;">
+    <div class="modal-content" style="max-width: 600px;">
+      <div class="modal-header">
+        <h3>Create New Course</h3>
+        <button class="btn btn-outline btn-sm" onclick="closeCreateCourseModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="createCourseForm">
+          <div class="form-group">
+            <label>Course Title *</label>
+            <input type="text" id="courseTitle" required>
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea id="courseDesc" rows="3"></textarea>
+          </div>
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label>Department</label>
+              <select id="courseDept">
+                <option value="CSE">Computer Science</option>
+                <option value="ECE">Electronics</option>
+                <option value="MECH">Mechanical</option>
+                <option value="CIVIL">Civil</option>
+                <option value="EEE">Electrical</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Duration</label>
+              <input type="text" id="courseDuration" placeholder="e.g., 3 months">
+            </div>
+          </div>
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label>Fees (₹)</label>
+              <input type="number" id="courseFees" min="0">
+            </div>
+            <div class="form-group">
+              <label>Mode</label>
+              <select id="courseMode">
+                <option value="online">Online</option>
+                <option value="offline">Offline</option>
+                <option value="hybrid">Hybrid</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Required Skills</label>
+            <input type="text" id="courseSkills" placeholder="e.g., Python, JavaScript">
+          </div>
+          <div class="form-group">
+            <label>Course Link</label>
+            <input type="url" id="courseLink" placeholder="https://...">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="closeCreateCourseModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="createCourse()">Create Course</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Module Modal -->
+  <div id="addModuleModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Add Course Module</h3>
+        <button class="btn btn-outline btn-sm" onclick="closeAddModuleModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="addModuleForm">
+          <div class="form-group">
+            <label>Module Title *</label>
+            <input type="text" id="moduleTitle" required>
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea id="moduleDescription" rows="3"></textarea>
+          </div>
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label>Order Index</label>
+              <input type="number" id="moduleOrder" min="0" value="0">
+            </div>
+            <div class="form-group">
+              <label>Duration (minutes)</label>
+              <input type="number" id="moduleDuration" min="0">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Content Type</label>
+            <select id="moduleContentType">
+              <option value="video">Video</option>
+              <option value="reading">Reading Material</option>
+              <option value="interactive">Interactive</option>
+              <option value="quiz">Quiz</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Content URL</label>
+            <input type="url" id="moduleContentUrl" placeholder="https://...">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="closeAddModuleModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="addModule()">Add Module</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Practice Modal -->
+  <div id="addPracticeModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Add Practice/Assignment</h3>
+        <button class="btn btn-outline btn-sm" onclick="closeAddPracticeModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="addPracticeForm">
+          <div class="form-group">
+            <label>Title *</label>
+            <input type="text" id="practiceTitle" required>
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea id="practiceDescription" rows="3"></textarea>
+          </div>
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label>Type</label>
+              <select id="practiceType">
+                <option value="exercise">Exercise</option>
+                <option value="assignment">Assignment</option>
+                <option value="quiz">Quiz</option>
+                <option value="project">Project</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Difficulty</label>
+              <select id="practiceDifficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label>Max Score</label>
+              <input type="number" id="practiceMaxScore" value="100" min="0">
+            </div>
+            <div class="form-group">
+              <label>Time Limit (minutes)</label>
+              <input type="number" id="practiceTimeLimit" min="0">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Due Date</label>
+            <input type="date" id="practiceDueDate">
+          </div>
+          <div class="form-group">
+            <label>Module (Optional)</label>
+            <select id="practiceModule">
+              <option value="">-- No Module --</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="closeAddPracticeModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="addPractice()">Add Practice</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Student Progress Modal -->
+  <div id="studentProgressModal" class="modal" style="display: none;">
+    <div class="modal-content" style="max-width: 800px;">
+      <div class="modal-header">
+        <h3 id="studentProgressTitle">Student Progress</h3>
+        <button class="btn btn-outline btn-sm" onclick="closeStudentProgressModal()">&times;</button>
+      </div>
+      <div class="modal-body" id="studentProgressBody">
+        <!-- Progress details will be loaded here -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="closeStudentProgressModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/company-course-management.js"></script>
+</body>
+</html>
+
